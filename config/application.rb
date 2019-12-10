@@ -9,7 +9,6 @@ Bundler.require(*Rails.groups)
 module RailsAmusementPark
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
-    Rails.application.config.active_record.sqlite3.represent_boolean_as_integer =true
+    config.load_defaults 5.2
   end
 end
