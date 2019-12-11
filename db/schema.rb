@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_013443) do
+ActiveRecord::Schema.define(version: 2019_12_11_014054) do
 
   create_table "routes", force: :cascade do |t|
     t.string "title"
     t.string "location"
     t.float "distance"
     t.integer "elevation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "runs", force: :cascade do |t|
+    t.datetime "date"
+    t.float "run_time"
+    t.string "mood"
+    t.string "notes"
+    t.integer "user_id"
+    t.integer "route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
