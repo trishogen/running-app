@@ -1,0 +1,104 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to CreateUsers (20191211012218)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "first_name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20191211012218_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191211012218"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to CreateRoutes (20191211013443)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "routes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "location" varchar, "distance" float, "elevation" integer, "user_id" integer, "route_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20191211013443_create_routes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191211013443"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-11 01:39:16.454745"], ["updated_at", "2019-12-11 01:39:16.454745"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to CreateRoutes (20191211013443)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "routes"[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20191211013443"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to CreateUsers (20191211012218)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20191211012218"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to CreateUsers (20191211012218)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20191211012218_create_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "first_name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20191211012218_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191211012218"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to CreateRoutes (20191211013443)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "routes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "location" varchar, "distance" float, "elevation" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20191211013443_create_routes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191211013443"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
