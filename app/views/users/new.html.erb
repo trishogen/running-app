@@ -1,0 +1,7 @@
+<h1> Sign up for Running Club </h1>
+<%= form_for @user do |f| %>
+  Email: <%= f.text_field :email %> </br>
+  Name: <%= f.text_field :first_name %> </br>
+  Password: <%= f.password_field :password %> </br>
+  <%= f.submit "Sign up" %>
+<% end %>
