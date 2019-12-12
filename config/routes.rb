@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root to: 'application#index'
+
+  #log in and log out
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   resources :runs
   resources :routes

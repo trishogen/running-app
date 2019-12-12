@@ -1,3 +1,4 @@
 <h1> Welcome to Running Club! </h1>
 <%= link_to 'Signup', new_user_path %> </br>
-<%= link_to 'Log In', login_path %>
+<%= link_to 'Log In', login_path %> </br>
+<%= link_to "Log Out", logout_path, method: :delete, data: { confirm: "Really?" } %>
