@@ -27,6 +27,11 @@ class RoutesController < ApplicationController
     redirect_to route_path(@route)
   end
 
+  def destroy
+    Route.find(params[:id]).destroy
+    redirect_to routes_path
+  end
+
   private
 
   def route_params

@@ -1325,3 +1325,190 @@ Processing by RoutesController#index as HTML
 Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/routes/1" for ::1 at 2019-12-14 17:11:48 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:17
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 19ms (Views: 10.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/routes/1/edit" for ::1 at 2019-12-14 17:11:49 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:21
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.4ms)
+  Rendered routes/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/1" for ::1 at 2019-12-14 17:12:39 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:17
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/1" for ::1 at 2019-12-14 17:12:51 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:17
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/routes/1" for ::1 at 2019-12-14 17:13:03 -0500
+Processing by RoutesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"msFtCG3tKzCdxLsK0+HRySk0up8Nu0yo/gjnatVAI1dGAUUpqgDQZWzBAcsZuJYLRWGdVLftyQPvpRCuv8yDXg==", "id"=>"1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[36mRoute Destroy (0.3ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 1.3ms)
+
+
+  
+NameError (undefined local variable or method `poutes_path' for #<RoutesController:0x00007fa43d7ab4b0>
+Did you mean?  routes_path
+               route_path):
+  
+app/controllers/routes_controller.rb:32:in `destroy'
+Started GET "/routes/1" for ::1 at 2019-12-14 17:13:24 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:17
+Completed 404 Not Found in 6ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Route with 'id'=1):
+  
+app/controllers/routes_controller.rb:17:in `show'
+Started GET "/routes/2" for ::1 at 2019-12-14 17:13:30 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:17
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/routes/2" for ::1 at 2019-12-14 17:13:32 -0500
+Processing by RoutesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+4R7KJkO72C8fePTDIBaVCYBd9eeejWOZGndVGvL8xYnRFMJXuMUNU14WRLG2R2WSlRQHCQssCV1xCqQAUdTHw==", "id"=>"2"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[36mRoute Destroy (0.4ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+Redirected to http://localhost:3000/routes
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/routes" for ::1 at 2019-12-14 17:13:32 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/new" for ::1 at 2019-12-14 17:13:34 -0500
+Processing by RoutesController#new as HTML
+  Rendering routes/new.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.1ms)
+  Rendered routes/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/routes" for ::1 at 2019-12-14 17:13:45 -0500
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rYaoU1KuIRzhGysujwokD+H6O0hnGUHtebh9V+b2erp0eT0k9jE0FToX923wWv6JC73UuAAxcT+4Ew/GFVmv8g==", "route"=>{"title"=>"Prospect Park Loop", "location"=>"Brooklyn", "distance"=>"3", "elevation"=>"102"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:12
+  [1m[36mRoute Create (0.4ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park Loop"], ["location", "Brooklyn"], ["distance", 3.0], ["elevation", 102], ["created_at", "2019-12-14 22:13:45.976017"], ["updated_at", "2019-12-14 22:13:45.976017"]]
+  ↳ app/controllers/routes_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/routes_controller.rb:12
+Redirected to http://localhost:3000/routes/3
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-14 17:13:45 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:17
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for ::1 at 2019-12-14 17:13:47 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/new" for ::1 at 2019-12-14 17:13:48 -0500
+Processing by RoutesController#new as HTML
+  Rendering routes/new.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.3ms)
+  Rendered routes/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/routes" for ::1 at 2019-12-14 17:13:57 -0500
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1vg8wjCce35LPr3vEOq3NMSAX+CmZvBGJGBwcmsPq/oPB6m1lANud5AyYaxvum2yLsewEMFOwJTlywLjmKB+sg==", "route"=>{"title"=>"Central Park Loop", "location"=>"Manhattan", "distance"=>"10", "elevation"=>"54"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:12
+  [1m[36mRoute Create (0.6ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Central Park Loop"], ["location", "Manhattan"], ["distance", 10.0], ["elevation", 54], ["created_at", "2019-12-14 22:13:57.322223"], ["updated_at", "2019-12-14 22:13:57.322223"]]
+  ↳ app/controllers/routes_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/routes_controller.rb:12
+Redirected to http://localhost:3000/routes/4
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/routes/4" for ::1 at 2019-12-14 17:13:57 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:17
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for ::1 at 2019-12-14 17:13:58 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
