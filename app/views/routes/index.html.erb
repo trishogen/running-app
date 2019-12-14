@@ -1,0 +1,4 @@
+<h1> Route Information </h1>
+<% @routes.each do |r| %>
+  <%= link_to r.title, route_path(r) %> </br>
+<% end %>
