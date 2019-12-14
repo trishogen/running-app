@@ -821,3 +821,35 @@ puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
 puma (3.12.2) lib/puma/server.rb:476:in `process_client'
 puma (3.12.2) lib/puma/server.rb:334:in `block in run'
 puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/routes/1" for ::1 at 2019-12-14 14:25:29 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:13
+Completed 404 Not Found in 6ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Route with 'id'=id):
+  
+app/controllers/routes_controller.rb:13:in `show'
+Started GET "/routes/1" for ::1 at 2019-12-14 14:25:48 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:13
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 12.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/routes/1" for ::1 at 2019-12-14 14:26:05 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:13
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.1ms)
+
+

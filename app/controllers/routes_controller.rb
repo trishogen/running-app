@@ -9,6 +9,10 @@ class RoutesController < ApplicationController
     redirect_to route_path(@route)
   end
 
+  def show
+    @route = Route.find(params[:id])
+  end
+
   private
 
   def route_params
