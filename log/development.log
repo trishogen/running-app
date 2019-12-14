@@ -1100,3 +1100,131 @@ Processing by RoutesController#show as HTML
 Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for ::1 at 2019-12-14 16:53:39 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 266ms (Views: 261.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/routes/new" for ::1 at 2019-12-14 16:53:43 -0500
+Processing by RoutesController#new as HTML
+  Rendering routes/new.html.erb within layouts/application
+  Rendered routes/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 33ms (Views: 21.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/routes" for ::1 at 2019-12-14 16:53:51 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/1" for ::1 at 2019-12-14 16:53:53 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:17
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/routes/1/edit" for ::1 at 2019-12-14 16:53:54 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:21
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (147.1ms)
+  Rendered routes/edit.html.erb within layouts/application (148.3ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fa43fef4558>:0x00007fa43e40b098>):
+    1: Title: <%= f.text_field :title %> </br>
+    2: Location: <%= f.text_field :location %> </br>
+    3: Distance (miles): <%= f.number_field :distance %> </br>
+    4: Elevation (feet): <%= f.number_field :elevation %> </br>
+  
+app/views/routes/_form.html.erb:1:in `_app_views_routes__form_html_erb__3328740370303050639_70171697929000'
+app/views/routes/edit.html.erb:3:in `block in _app_views_routes_edit_html_erb__2120426317830931744_70171697896560'
+app/views/routes/edit.html.erb:2:in `_app_views_routes_edit_html_erb__2120426317830931744_70171697896560'
+Started GET "/routes/1/edit" for ::1 at 2019-12-14 16:55:32 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:21
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (150.5ms)
+  Rendered routes/edit.html.erb within layouts/application (151.9ms)
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fa43fef4558>:0x00007fa43d77b670>):
+    1: Title: <%= f.text_field :title %> </br>
+    2: Location: <%= f.text_field :location %> </br>
+    3: Distance (miles): <%= f.number_field :distance %> </br>
+    4: Elevation (feet): <%= f.number_field :elevation %> </br>
+  
+app/views/routes/_form.html.erb:1:in `_app_views_routes__form_html_erb__3328740370303050639_70171691319660'
+app/views/routes/edit.html.erb:3:in `block in _app_views_routes_edit_html_erb__2120426317830931744_70171691310940'
+app/views/routes/edit.html.erb:2:in `_app_views_routes_edit_html_erb__2120426317830931744_70171691310940'
+Started GET "/routes" for ::1 at 2019-12-14 16:55:44 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/2" for ::1 at 2019-12-14 16:55:46 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:17
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/2/edit" for ::1 at 2019-12-14 16:55:47 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:21
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (204.2ms)
+  Rendered routes/edit.html.erb within layouts/application (205.2ms)
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fa43fef4558>:0x00007fa4444a2460>):
+    1: Title: <%= f.text_field :title %> </br>
+    2: Location: <%= f.text_field :location %> </br>
+    3: Distance (miles): <%= f.number_field :distance %> </br>
+    4: Elevation (feet): <%= f.number_field :elevation %> </br>
+  
+app/views/routes/_form.html.erb:1:in `_app_views_routes__form_html_erb__3328740370303050639_70171748137000'
+app/views/routes/edit.html.erb:3:in `block in _app_views_routes_edit_html_erb__2120426317830931744_70171748537960'
+app/views/routes/edit.html.erb:2:in `_app_views_routes_edit_html_erb__2120426317830931744_70171748537960'
+Started GET "/routes/2/edit" for ::1 at 2019-12-14 17:04:11 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:21
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.0ms)
+  Rendered routes/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
