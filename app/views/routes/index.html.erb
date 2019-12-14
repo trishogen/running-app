@@ -2,3 +2,5 @@
 <% @routes.each do |r| %>
   <%= link_to r.title, route_path(r) %> </br>
 <% end %>
+</br>
+<%= link_to 'Add new route', new_route_path %> </br>
