@@ -1,4 +1,5 @@
 class RunsController < ApplicationController
+  before_action :require_login
 
   def show
     @run = Run.find(params[:id])

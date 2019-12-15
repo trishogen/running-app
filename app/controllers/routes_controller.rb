@@ -1,4 +1,5 @@
 class RoutesController < ApplicationController
+  before_action :require_login
 
   def index
     @routes = Route.all
@@ -37,4 +38,5 @@ class RoutesController < ApplicationController
   def route_params
     params.require(:route).permit(:title, :location, :distance, :elevation)
   end
+
 end
