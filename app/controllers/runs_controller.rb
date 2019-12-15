@@ -1,5 +1,9 @@
 class RunsController < ApplicationController
 
+  def show
+    @run = Run.find(params[:id])
+  end
+
   def new
     @user = User.find(params[:user_id])
     @routes = Route.all
@@ -8,9 +12,8 @@ class RunsController < ApplicationController
 
   def create
     @user = User.find(params[:run][:user_id])
-    @run = @user.runs.build(run_params)
-    @run.save
-    redirect_to user_run_path(@run)
+    @run = @user.runs.create(run_params)
+    redirect_to user_run_path(@user, @run)
   end
 
   private

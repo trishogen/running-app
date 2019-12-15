@@ -2117,3 +2117,302 @@ Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
 ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"runs", :user_id=>#<Run id: nil, date: "2019-12-15 00:00:00", run_time: 2.0, mood: "wef", notes: "werewr", user_id: 1, route_id: 3, created_at: nil, updated_at: nil>}, missing required keys: [:id], possible unmatched constraints: [:user_id]):
   
 app/controllers/runs_controller.rb:13:in `create'
+Started POST "/runs" for ::1 at 2019-12-14 21:32:58 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nYWGzYlHY4CF7U/kiW53t7DDPf7ZKq8ManiP2MebpIxBRa7sTqqY1XTo9SVDNzB13JYaNWN8Kqd71XgcrRcEhQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"2", "mood"=>"wef", "notes"=>"werewr"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"runs", :user_id=>#<Run id: nil, date: "2019-12-15 00:00:00", run_time: 2.0, mood: "wef", notes: "werewr", user_id: 1, route_id: 3, created_at: nil, updated_at: nil>}, missing required keys: [:id], possible unmatched constraints: [:user_id]):
+  
+app/controllers/runs_controller.rb:17:in `create'
+Started POST "/runs" for ::1 at 2019-12-14 21:33:02 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nYWGzYlHY4CF7U/kiW53t7DDPf7ZKq8ManiP2MebpIxBRa7sTqqY1XTo9SVDNzB13JYaNWN8Kqd71XgcrRcEhQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"2", "mood"=>"wef", "notes"=>"werewr"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"runs", :user_id=>#<Run id: nil, date: "2019-12-15 00:00:00", run_time: 2.0, mood: "wef", notes: "werewr", user_id: 1, route_id: 3, created_at: nil, updated_at: nil>}, missing required keys: [:id], possible unmatched constraints: [:user_id]):
+  
+app/controllers/runs_controller.rb:17:in `create'
+Started GET "/users/1/runs/new" for ::1 at 2019-12-14 21:34:47 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by RunsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:8
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/new.html.erb:6
+  Rendered runs/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 206ms (Views: 183.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/runs" for ::1 at 2019-12-14 21:34:55 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"runs", :user_id=>#<Run id: nil, date: "2019-12-15 00:00:00", run_time: 23.0, mood: "rewr", notes: "wer", user_id: 1, route_id: 3, created_at: nil, updated_at: nil>}, missing required keys: [:id], possible unmatched constraints: [:user_id]):
+  
+app/controllers/runs_controller.rb:17:in `create'
+Started POST "/runs" for ::1 at 2019-12-14 21:36:10 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"runs", :id=>nil, :user_id=>"1"}, missing required keys: [:id]):
+  
+app/controllers/runs_controller.rb:17:in `create'
+Started POST "/runs" for ::1 at 2019-12-14 21:37:34 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"runs", :id=>nil, :user_id=>"1"}, missing required keys: [:id]):
+  
+app/controllers/runs_controller.rb:17:in `create'
+Started POST "/runs" for ::1 at 2019-12-14 21:37:55 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `empty?' for false:FalseClass):
+  
+app/controllers/runs_controller.rb:17:in `create'
+Started POST "/runs" for ::1 at 2019-12-14 21:38:30 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.1ms)
+
+
+  
+RuntimeError ():
+  
+app/controllers/runs_controller.rb:17:in `create'
+Started POST "/runs" for ::1 at 2019-12-14 21:38:43 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (private method `raise' called for #<ActionController::Parameters:0x00007fe70da61638>):
+  
+app/controllers/runs_controller.rb:17:in `create'
+Started POST "/runs" for ::1 at 2019-12-14 21:39:24 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=><ActionController::Parameters {"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"} permitted: false>, "commit"=>"Submit", "controller"=>"runs", "action"=>"create"} permitted: false>):
+  
+app/controllers/runs_controller.rb:17:in `create'
+Started PUT "/__web_console/repl_sessions/a9f477c5903907fada856d14b6eb7b56" for ::1 at 2019-12-14 21:40:10 -0500
+Started PUT "/__web_console/repl_sessions/a9f477c5903907fada856d14b6eb7b56" for ::1 at 2019-12-14 21:40:12 -0500
+Started PUT "/__web_console/repl_sessions/a9f477c5903907fada856d14b6eb7b56" for ::1 at 2019-12-14 21:40:13 -0500
+  [1m[36mRun Load (0.9ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Started POST "/runs" for ::1 at 2019-12-14 21:48:02 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:16
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"runs", :id=>nil, :user_id=>"1"}, missing required keys: [:id]):
+  
+app/controllers/runs_controller.rb:18:in `create'
+Started POST "/runs" for ::1 at 2019-12-14 21:48:35 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:15
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.9ms)
+
+
+  
+RuntimeError (#<Run id: nil, date: "2019-12-15 00:00:00", run_time: 23.0, mood: "rewr", notes: "wer", user_id: 1, route_id: 3, created_at: nil, updated_at: nil>):
+  
+app/controllers/runs_controller.rb:16:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRun Load (0.3ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/runs" for ::1 at 2019-12-14 21:57:48 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:15
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:15
+  [1m[36mRun Create (0.9ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "notes", "user_id", "route_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2019-12-15 00:00:00"], ["run_time", 23.0], ["mood", "rewr"], ["notes", "wer"], ["user_id", 1], ["route_id", 3], ["created_at", "2019-12-15 02:57:48.335535"], ["updated_at", "2019-12-15 02:57:48.335535"]]
+  ↳ app/controllers/runs_controller.rb:15
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/runs_controller.rb:15
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.8ms)
+
+
+  
+RuntimeError (#<Run id: 1, date: "2019-12-15 00:00:00", run_time: 23.0, mood: "rewr", notes: "wer", user_id: 1, route_id: 3, created_at: "2019-12-15 02:57:48", updated_at: "2019-12-15 02:57:48">):
+  
+app/controllers/runs_controller.rb:16:in `create'
+Started POST "/runs" for ::1 at 2019-12-14 21:58:07 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VbYHFOSMkTsxvvvw0SNf/2ZncJSfoQRDRKEOQOY1yhCJdi81I2FqbsC7QTEbehg9CjJXXyX3gehVDPmEjLlqGQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23", "mood"=>"rewr", "notes"=>"wer"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:15
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:15
+  [1m[36mRun Create (0.3ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "notes", "user_id", "route_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2019-12-15 00:00:00"], ["run_time", 23.0], ["mood", "rewr"], ["notes", "wer"], ["user_id", 1], ["route_id", 3], ["created_at", "2019-12-15 02:58:07.370221"], ["updated_at", "2019-12-15 02:58:07.370221"]]
+  ↳ app/controllers/runs_controller.rb:15
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/runs_controller.rb:15
+Redirected to http://localhost:3000/users/1/runs/2
+Completed 302 Found in 24ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/1/runs/2" for ::1 at 2019-12-14 21:58:07 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:4
+  Rendering runs/show.html.erb within layouts/application
+  Rendered runs/show.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Run:0x00007fe70d1b16c8>):
+    1: <h1> Run Information for <%= @run.title %></h1>
+    2: <%= @run.date %> </br>
+    3: <%= @run.route.title %> </br>
+    4: <%= @run.run_time %> </br>
+  
+app/views/runs/show.html.erb:1:in `_app_views_runs_show_html_erb___1410521489530172295_70315167023540'
+Started GET "/users/1/runs/2" for ::1 at 2019-12-14 21:58:52 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:4
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 31ms (Views: 18.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1/runs/2" for ::1 at 2019-12-14 21:59:29 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:4
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
