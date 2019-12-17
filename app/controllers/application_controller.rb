@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
 
   def index
+    @user = current_user
   end
 
   private

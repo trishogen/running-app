@@ -1,0 +1,6 @@
+<h1>My Runs</h1>
+<% @runs.each do |r| %>
+  <%= link_to r.id, run_path(r) %> </br>
+<% end %>
+</br>
+<%= link_to 'Add new run', new_user_run_path(@user) %> </br>

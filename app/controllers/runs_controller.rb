@@ -1,6 +1,11 @@
 class RunsController < ApplicationController
   before_action :require_login
 
+  def index
+    @user = current_user
+    @runs = @user.runs
+  end
+
   def show
     @run = Run.find(params[:id])
   end
