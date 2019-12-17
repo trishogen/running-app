@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:user][:email])
+    return head(:forbidden) unless params[:password] == @user.password
     session[:user_id] = @user.id
     redirect_to root_path
   end
