@@ -10,8 +10,12 @@ class RoutesController < ApplicationController
   end
 
   def create
-    @route = Route.create(route_params)
-    redirect_to route_path(@route)
+    @route = Route.new(route_params)
+    if @route.save
+      redirect_to route_path(@route)
+    else
+      render :new
+    end
   end
 
   def show
