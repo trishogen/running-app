@@ -5133,3 +5133,210 @@ Processing by RunsController#show as HTML
 Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/users/1/runs/1" for ::1 at 2019-12-17 21:17:08 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:11
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 34ms (Views: 17.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/runs/1" for ::1 at 2019-12-17 21:17:19 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:11
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/runs/1" for ::1 at 2019-12-17 21:17:22 -0500
+Processing by RunsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OVxiVaamDRfPUJNgDUx8BPENJtcrGm5KoPywQbwIWNPlnEp0YUv2Qj5VKaHHFTvGnVgBHJFM6+GxUUeF1oT42g==", "id"=>"1"}
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:39
+  [1m[36mRun Destroy (0.3ms)[0m  [1m[31mDELETE FROM "runs" WHERE "runs"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/runs_controller.rb:39
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/runs_controller.rb:39
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"index", :controller=>"runs", :id=>"1"}, missing required keys: [:user_id]):
+  
+app/controllers/runs_controller.rb:40:in `destroy'
+Started DELETE "/runs/1" for ::1 at 2019-12-17 21:18:39 -0500
+Processing by RunsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OVxiVaamDRfPUJNgDUx8BPENJtcrGm5KoPywQbwIWNPlnEp0YUv2Qj5VKaHHFTvGnVgBHJFM6+GxUUeF1oT42g==", "id"=>"1"}
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:39
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Run with 'id'=1):
+  
+app/controllers/runs_controller.rb:39:in `destroy'
+Started GET "/users/1/runs/1" for ::1 at 2019-12-17 21:18:45 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:11
+Completed 404 Not Found in 8ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Run with 'id'=1):
+  
+app/controllers/runs_controller.rb:11:in `show'
+Started GET "/users/1/runs" for ::1 at 2019-12-17 21:18:46 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:2
+  Rendered runs/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 43ms (Views: 40.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2019-12-17 21:18:46 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:2
+  Rendered runs/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2019-12-17 21:18:47 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:2
+  Rendered runs/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/runs/new" for ::1 at 2019-12-17 21:18:48 -0500
+Processing by RunsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:15
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (8.1ms)
+  Rendered runs/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/runs" for ::1 at 2019-12-17 21:18:57 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KrtROEBuYobZGXmz1vLZKad/+J1U0ontKGkC56GmFsRt0kIfoFCdGB7IKybzt6NSTdUXYildcbZqYENV1hTd5Q==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"18", "route_id"=>"3", "run_time"=>"1212", "mood"=>"easd", "notes"=>"ads"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:22
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:22
+  [1m[36mRun Create (0.5ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "notes", "user_id", "route_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2019-12-18 00:00:00"], ["run_time", 1212.0], ["mood", "easd"], ["notes", "ads"], ["user_id", 1], ["route_id", 3], ["created_at", "2019-12-18 02:18:57.402042"], ["updated_at", "2019-12-18 02:18:57.402042"]]
+  ↳ app/controllers/runs_controller.rb:22
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/runs_controller.rb:22
+Redirected to http://localhost:3000/users/1/runs/3
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/runs/3" for ::1 at 2019-12-17 21:18:57 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:11
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2019-12-17 21:19:03 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:2
+  Rendered runs/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/runs/3" for ::1 at 2019-12-17 21:19:05 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:11
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/runs/3" for ::1 at 2019-12-17 21:19:08 -0500
+Processing by RunsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HPOpLWRv0Nhr13aYBA35K+IE6g1kRxlpjN7LBBs26wbAM4EMo4IrjZrSzFnOVL7pjlHNxt4RnMKdczzAcbpLDw==", "id"=>"3"}
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:39
+  [1m[36mRun Destroy (0.4ms)[0m  [1m[31mDELETE FROM "runs" WHERE "runs"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/runs_controller.rb:39
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/runs_controller.rb:39
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+Redirected to http://localhost:3000/users/1/runs
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2019-12-17 21:19:08 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:2
+  Rendered runs/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms)
+
+

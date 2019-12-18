@@ -35,6 +35,11 @@ class RunsController < ApplicationController
     redirect_to user_run_path(@run)
   end
 
+  def destroy
+    Run.find(params[:id]).destroy
+    redirect_to user_runs_path(current_user)
+  end
+
   private
 
   def run_params
