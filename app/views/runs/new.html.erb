@@ -1,11 +1,2 @@
 <h1> Add a new run </h1>
-<%= form_for @run do |f| %>
-  <%= f.hidden_field :user_id %>
-
-  When was your run? <%= f.date_select :date %> </br>
-  What route did you run? <%= f.collection_select :route_id, @routes, :id, :title %> </br>
-  How long did you run for? (in minutes) <%= f.number_field :run_time %> </br>
-  How did you feel? <%= f.text_field :mood %> </br>
-  Anything to note? <%= f.text_field :notes %> </br>
-  <%= f.submit "Submit" %>
-<% end %>
+<%= render 'form' %>
