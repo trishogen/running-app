@@ -19,8 +19,14 @@ class RunsController < ApplicationController
 
   def create
     @user = User.find(params[:run][:user_id])
-    @run = @user.runs.create(run_params)
-    redirect_to user_run_path(@user, @run)
+    @run = @user.runs.build(run_params)
+    @routes = Route.all
+
+    if @run.save
+      redirect_to user_run_path(@user, @run)
+    else
+      render :new
+    end
   end
 
   def edit

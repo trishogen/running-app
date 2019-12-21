@@ -5340,3 +5340,324 @@ Processing by RunsController#index as HTML
 Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for ::1 at 2019-12-17 21:36:06 -0500
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 11.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2019-12-17 21:36:08 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/Users/trishogen/workspace/running-app/app/models/run.rb:8: syntax error, unexpected '\n', expecting =>):
+  
+app/models/run.rb:8: syntax error, unexpected '\n', expecting =>
+app/controllers/runs_controller.rb:6:in `index'
+Started GET "/users/1/runs" for ::1 at 2019-12-17 21:36:26 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/Users/trishogen/workspace/running-app/app/models/run.rb:7: syntax error, unexpected '\n', expecting =>):
+  
+app/models/run.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/runs_controller.rb:6:in `index'
+Started GET "/users/1/runs" for ::1 at 2019-12-17 21:37:05 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:2
+  Rendered runs/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 30ms (Views: 17.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/runs/new" for ::1 at 2019-12-17 21:37:07 -0500
+Processing by RunsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:15
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (8.5ms)
+  Rendered runs/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 25ms (Views: 19.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/runs" for ::1 at 2019-12-17 21:37:14 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Q0PJ1L68oAz2otazWcdAgU3ZaMu6tU95n+BSqahecKmZBwAssQNHvQL2c/oImd5752KXFNlLWakdsD40ROy4w==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"18", "route_id"=>"3", "run_time"=>"", "mood"=>"", "notes"=>""}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:22
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:22
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"runs", :id=>nil, :user_id=>"1"}, missing required keys: [:id]):
+  
+app/controllers/runs_controller.rb:23:in `create'
+Started POST "/runs" for ::1 at 2019-12-17 21:41:40 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Q0PJ1L68oAz2otazWcdAgU3ZaMu6tU95n+BSqahecKmZBwAssQNHvQL2c/oImd5752KXFNlLWakdsD40ROy4w==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"18", "route_id"=>"3", "run_time"=>"", "mood"=>"", "notes"=>""}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:24
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:24
+  Rendering runs/new.html.erb within layouts/application
+  Rendered runs/_form.html.erb (2.3ms)
+  Rendered runs/new.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    2:   <%= f.hidden_field :user_id %>
+    3: 
+    4:   When was your run? <%= f.date_select :date %> </br>
+    5:   What route did you run? <%= f.collection_select :route_id, @routes, :id, :title %> </br>
+    6:   How long did you run for? (in minutes) <%= f.number_field :run_time %> </br>
+    7:   How did you feel? <%= f.text_field :mood %> </br>
+    8:   Anything to note? <%= f.text_field :notes %> </br>
+  
+app/views/runs/_form.html.erb:5:in `block in _app_views_runs__form_html_erb__4237299524807158238_70363072371680'
+app/views/runs/_form.html.erb:1:in `_app_views_runs__form_html_erb__4237299524807158238_70363072371680'
+app/views/runs/new.html.erb:17:in `_app_views_runs_new_html_erb___2245610951145376819_70363072263200'
+app/controllers/runs_controller.rb:27:in `create'
+Started POST "/runs" for ::1 at 2019-12-17 21:41:45 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rn2MeTXhMKX4rlDYt0DG6aq85fxPT+qmlgPcyDO7b25yvaRY8gzL8Amr6hl9GYErxunCN/UZbw2HrisMWTfPZw==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"18", "route_id"=>"3", "run_time"=>"", "mood"=>"", "notes"=>""}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:24
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:24
+  Rendering runs/new.html.erb within layouts/application
+  Rendered runs/_form.html.erb (2.6ms)
+  Rendered runs/new.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    2:   <%= f.hidden_field :user_id %>
+    3: 
+    4:   When was your run? <%= f.date_select :date %> </br>
+    5:   What route did you run? <%= f.collection_select :route_id, @routes, :id, :title %> </br>
+    6:   How long did you run for? (in minutes) <%= f.number_field :run_time %> </br>
+    7:   How did you feel? <%= f.text_field :mood %> </br>
+    8:   Anything to note? <%= f.text_field :notes %> </br>
+  
+app/views/runs/_form.html.erb:5:in `block in _app_views_runs__form_html_erb__4237299524807158238_70363089386120'
+app/views/runs/_form.html.erb:1:in `_app_views_runs__form_html_erb__4237299524807158238_70363089386120'
+app/views/runs/new.html.erb:17:in `_app_views_runs_new_html_erb___2245610951145376819_70363089351240'
+app/controllers/runs_controller.rb:27:in `create'
+Started POST "/runs" for ::1 at 2019-12-17 21:42:24 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rn2MeTXhMKX4rlDYt0DG6aq85fxPT+qmlgPcyDO7b25yvaRY8gzL8Amr6hl9GYErxunCN/UZbw2HrisMWTfPZw==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"18", "route_id"=>"3", "run_time"=>"", "mood"=>"", "notes"=>""}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:25
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:25
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (2.2ms)
+  Rendered runs/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 45ms (Views: 14.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/runs" for ::1 at 2019-12-17 21:42:27 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C3+eu9qXPE7m6TGTbeyPQfizqtVHKCcnzXIL4JFSEPjXv7aaHXrHGxfsi1KntciDlOaNHv1+oozc3/wk+96w8Q==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"18", "route_id"=>"3", "run_time"=>"", "mood"=>"", "notes"=>""}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:25
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:25
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:25
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (3.2ms)
+  Rendered runs/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/runs" for ::1 at 2019-12-17 21:43:27 -0500
+Processing by RunsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:2
+  Rendered runs/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/runs/new" for ::1 at 2019-12-17 21:43:29 -0500
+Processing by RunsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:15
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (19.4ms)
+  Rendered runs/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/runs" for ::1 at 2019-12-17 21:43:32 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B/d6Wd9eMAcmPd9C5RBqWp+e3ikfsuSUECwWnNTM3zxAnml+P2DPmeHsjdfAVRAhdTQx1mI9HM9SJVcuo34UHQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"18", "route_id"=>"3", "run_time"=>"", "mood"=>"", "notes"=>""}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:25
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:25
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (2.5ms)
+  Rendered runs/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 23ms (Views: 16.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/runs" for ::1 at 2019-12-17 21:43:51 -0500
+Processing by RunsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:2
+  Rendered runs/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 28ms (Views: 17.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/runs/new" for ::1 at 2019-12-17 21:43:52 -0500
+Processing by RunsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:15
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (8.5ms)
+  Rendered runs/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 26ms (Views: 20.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/runs" for ::1 at 2019-12-17 21:43:55 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aLyOYda8B35PC3H1mi/Wrf9qmZN76tPi53DkG71w5bQv1Z1GNoL44IjaI2C/aqzWFcB2bAZlK7mleaWpysIulQ==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"18", "route_id"=>"3", "run_time"=>"34", "mood"=>"", "notes"=>""}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:25
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:25
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:25
+  Rendering runs/new.html.erb within layouts/application
+  Rendered runs/_form.html.erb (3.2ms)
+  Rendered runs/new.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    2:   <%= f.hidden_field :user_id %>
+    3: 
+    4:   When was your run? <%= f.date_select :date %> </br>
+    5:   What route did you run? <%= f.collection_select :route_id, @routes, :id, :title %> </br>
+    6:   How long did you run for? (in minutes) <%= f.number_field :run_time %> </br>
+    7:   How did you feel? <%= f.text_field :mood %> </br>
+    8:   Anything to note? <%= f.text_field :notes %> </br>
+  
+app/views/runs/_form.html.erb:5:in `block in _app_views_runs__form_html_erb__4237299524807158238_70363145213460'
+app/views/runs/_form.html.erb:1:in `_app_views_runs__form_html_erb__4237299524807158238_70363145213460'
+app/views/runs/new.html.erb:17:in `_app_views_runs_new_html_erb___2245610951145376819_70363145182040'
+app/controllers/runs_controller.rb:28:in `create'
+Started GET "/runs" for ::1 at 2019-12-21 15:18:59 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by RunsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.5ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:2
+  Rendered runs/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 258ms (Views: 230.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1/runs/new" for ::1 at 2019-12-21 15:19:03 -0500
+Processing by RunsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:15
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (15.5ms)
+  Rendered runs/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/runs" for ::1 at 2019-12-21 15:19:05 -0500
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7g2bHGmB8GUEa90awIoxhSs/ERrOC7R1HaucZB+jjBGpZIg7ib8P+8O6j4/lz0v+wZX+5bOETC5fot3WaBFHMA==", "run"=>{"user_id"=>"1", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"21", "route_id"=>"3", "run_time"=>"", "mood"=>"", "notes"=>""}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:25
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:25
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (2.1ms)
+  Rendered runs/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.5ms)
+
+
