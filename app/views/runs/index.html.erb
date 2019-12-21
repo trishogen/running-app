@@ -1,4 +1,8 @@
 <h1>My Runs</h1>
+<% flash.each do |name, msg| -%>
+   <%= content_tag :div, msg, class: name %>
+ <% end -%>
+
 <% @runs.each do |r| %>
   <%= link_to r.id, user_run_path(@user, r) %> </br>
 <% end %>

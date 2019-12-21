@@ -7,8 +7,15 @@ class RunsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @run = Run.find(params[:id])
+    @user = User.find_by(id: params[:user_id])
+    @run = @user.runs.find_by(id: params[:id])
+    if @user == nil
+      flash[:alert] = 'User not found'
+      redirect_to user_runs_path(current_user)
+    elsif @run == nil
+      flash[:alert] = 'Run not found'
+      redirect_to user_runs_path(current_user)
+    end
   end
 
   def new
