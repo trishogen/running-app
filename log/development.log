@@ -6186,3 +6186,381 @@ Processing by RunsController#show as HTML
 Completed 200 OK in 24ms (Views: 19.6ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/routes" for ::1 at 2019-12-21 16:00:46 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:00:48 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_id' for nil:NilClass):
+    4: Elevation: <%= @route.elevation %> feet </br>
+    5: 
+    6: 
+    7: <% if @club.user_id == current_user.id %>
+    8:   <%= link_to "Edit", edit_route_path(@route) %> |
+    9:   <%= link_to "Delete", @route, method: :delete, data: { confirm: "Really?" } %>
+   10: <% end %>
+  
+app/views/routes/show.html.erb:7:in `_app_views_routes_show_html_erb__2767759602121835289_70259362682120'
+Started GET "/routes/3" for ::1 at 2019-12-21 16:01:20 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Route:0x00007fcd0f188c18>
+Did you mean?  users):
+    4: Elevation: <%= @route.elevation %> feet </br>
+    5: 
+    6: 
+    7: <% if @route.user == current_user %>
+    8:   <%= link_to "Edit", edit_route_path(@route) %> |
+    9:   <%= link_to "Delete", @route, method: :delete, data: { confirm: "Really?" } %>
+   10: <% end %>
+  
+app/views/routes/show.html.erb:7:in `_app_views_routes_show_html_erb__2767759602121835289_70259349167480'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to AddDescriptionToRoutes (20191221211204)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "routes" ADD "description" varchar[0m
+  ↳ db/migrate/20191221211204_add_description_to_routes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191221211204"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Started GET "/routes" for ::1 at 2019-12-21 16:15:03 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:15:05 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/3/edit" for ::1 at 2019-12-21 16:15:07 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:26
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.0ms)
+  Rendered routes/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/3/edit" for ::1 at 2019-12-21 16:15:43 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:26
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (0.9ms)
+  Rendered routes/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 21ms (Views: 12.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/routes/3" for ::1 at 2019-12-21 16:15:44 -0500
+Processing by RoutesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MRJJ1Zl+Ka7jcoXoHFa/YeyPYzKGgusRVTSmeVfWRrjt0mH0XpPS+xJ3PynWD/ijgNpE+TzUbrpEmVG9PVrmsQ==", "route"=>{"title"=>"Prospect Park Loop", "location"=>"Brooklyn", "distance"=>"3.0", "elevation"=>"102", "description"=>""}, "commit"=>"Submit", "id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? AND "routes"."id" != ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+Redirected to http://localhost:3000/routes/3
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:15:44 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:15:47 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/3/edit" for ::1 at 2019-12-21 16:15:50 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:26
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.0ms)
+  Rendered routes/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/routes/3" for ::1 at 2019-12-21 16:15:51 -0500
+Processing by RoutesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QzQEP59kMMxOr9C4s1fH6CYF95fm8nWArYZ3VfXzp3M4K4NeFc78v0g6y8UhH0cQDge4MktM9FomTEPKt9cQ6A==", "route"=>{"title"=>"Prospect Park Loop", "location"=>"Brooklyn", "distance"=>"3.0", "elevation"=>"102", "description"=>""}, "commit"=>"Submit", "id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[36mRoute Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? AND "routes"."id" != ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+Redirected to http://localhost:3000/routes/3
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:15:51 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:16:02 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for ::1 at 2019-12-21 16:16:05 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/new" for ::1 at 2019-12-21 16:16:06 -0500
+Processing by RoutesController#new as HTML
+  Rendering routes/new.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.1ms)
+  Rendered routes/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/routes" for ::1 at 2019-12-21 16:16:07 -0500
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jv/3RtG9Kma+pGaJk9abNZvZ06EfLL8W/B2/GuGI0B1XAGIxdSI/b2WousrshkGzcZ48UXgEj8Q9ts2LEicFVQ==", "route"=>{"title"=>"", "location"=>"", "distance"=>"", "elevation"=>"", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:14
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/routes_controller.rb:14
+  Rendering routes/new.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.4ms)
+  Rendered routes/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 28ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/routes" for ::1 at 2019-12-21 16:16:25 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:16:40 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 10.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/routes/3/edit" for ::1 at 2019-12-21 16:16:41 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:26
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.3ms)
+  Rendered routes/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/routes/3" for ::1 at 2019-12-21 16:16:50 -0500
+Processing by RoutesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ucB0U6xLt6dmIklG3rIdgtiqM5vxQNxoHoZiRf6cC6HC3/MyJuF71GC3UjtM+p168Kh8Plz+XbKVTFbavLi8Og==", "route"=>{"title"=>"Prospect Park Loop", "location"=>"Brooklyn", "distance"=>"3.0", "elevation"=>"102", "description"=>"Easy run through prospect park"}, "commit"=>"Submit", "id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? AND "routes"."id" != ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[36mRoute Update (0.3ms)[0m  [1m[33mUPDATE "routes" SET "description" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["description", "Easy run through prospect park"], ["updated_at", "2019-12-21 21:16:50.038654"], ["id", 3]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+Redirected to http://localhost:3000/routes/3
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:16:50 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:16:55 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:17:31 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/3/edit" for ::1 at 2019-12-21 16:18:16 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:26
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.0ms)
+  Rendered routes/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/routes/3" for ::1 at 2019-12-21 16:18:19 -0500
+Processing by RoutesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BLdatOFBv+QsLPZjCXUKIkFhqhMFc1Cy8Zd8lMkV2S1/qN3Va+tzlyq57R6bPYraaWPltqjN0Wh6XUgLizFutg==", "route"=>{"title"=>"Prospect Park Loop", "location"=>"Brooklyn", "distance"=>"3.0", "elevation"=>"102", "description"=>""}, "commit"=>"Submit", "id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? AND "routes"."id" != ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+Redirected to http://localhost:3000/routes/3
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:18:19 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/3/edit" for ::1 at 2019-12-21 16:19:16 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:26
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.0ms)
+  Rendered routes/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/routes/3" for ::1 at 2019-12-21 16:19:19 -0500
+Processing by RoutesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SxJMp9I2mdpUWtL8ZlUn6IDlEnGzZIEw8JPjYkoAU5gwDcvGWJxVqVLPyYH0HacQqOdd1B7aAOp7Wdf9CCTkAw==", "route"=>{"title"=>"Prospect Park Loop", "location"=>"Brooklyn", "distance"=>"3.0", "elevation"=>"102", "description"=>""}, "commit"=>"Submit", "id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? AND "routes"."id" != ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+Redirected to http://localhost:3000/routes/3
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/routes/3" for ::1 at 2019-12-21 16:19:19 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms)
+
+
