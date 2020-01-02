@@ -7,3 +7,6 @@ Notes: <%= @run.notes %> </br>
 
 <%= link_to "Edit", edit_user_run_path(@user, @run) %> |
 <%= link_to "Delete", @run, method: :delete, data: { confirm: "Really?" } %>
+</br>
+</br>
+<%= link_to "See all my runs", user_runs_path(@user) %>
