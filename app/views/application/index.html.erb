@@ -1,8 +1,13 @@
 <h1> Welcome to Running Club! </h1>
-<%= link_to 'Signup', new_user_path %> </br>
-<%= link_to 'Log In', login_path %> </br>
+<% if logged_in? %>
+  <%= link_to 'View running routes', routes_path %> </br>
+  <%= link_to 'My runs', user_runs_path(@user) %> </br>
 
-<%= link_to 'View running routes', routes_path %> </br>
-<%= link_to 'My runs', user_runs_path(@user) %> </br>
+  <%= link_to "Log Out", logout_path, method: :delete, data: { confirm: "Really?" } %>
 
-<%= link_to "Log Out", logout_path, method: :delete, data: { confirm: "Really?" } %>
+<% else %>
+
+  <%= link_to 'Signup', new_user_path %> </br>
+  <%= link_to 'Log In', login_path %> </br>
+
+<% end %>
