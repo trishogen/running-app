@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_21_211204) do
+ActiveRecord::Schema.define(version: 2020_01_03_011534) do
 
   create_table "routes", force: :cascade do |t|
     t.string "title"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_12_21_211204) do
     t.integer "route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
   end
 
   create_table "users", force: :cascade do |t|

@@ -4,7 +4,8 @@
  <% end -%>
 
 <% @runs.each do |r| %>
-  <%= link_to r.id, user_run_path(@user, r) %> </br>
+  <%= run_date(r) %> - 
+  <%= link_to r.title, user_run_path(@user, r) %> </br>
 <% end %>
 </br>
 

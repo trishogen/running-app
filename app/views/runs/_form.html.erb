@@ -1,6 +1,6 @@
 <%= form_for @run do |f| %>
   <%= f.hidden_field :user_id %>
-
+  Give this run a name <%= f.text_field :title %> </br>
   When was your run? <%= f.date_select :date %> </br>
   What route did you run? <%= f.collection_select :route_id, @routes, :id, :title %> </br>
   How long did you run for? (in minutes) <%= f.number_field :run_time, step: :any %> </br>

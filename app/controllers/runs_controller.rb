@@ -56,6 +56,6 @@ class RunsController < ApplicationController
   private
 
   def run_params
-    params.require(:run).permit(:user_id, :route_id, :mood, :run_time, :date, :notes)
+    params.require(:run).permit(:user_id, :route_id, :title, :mood, :run_time, :date, :notes)
   end
 end
