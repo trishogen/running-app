@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   #log in and log out
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+
+  get '/auth/google_oauth2/callback' => 'sessions#create'
+
   delete '/logout', to: 'sessions#destroy'
 
   resources :users, only: [:show, :new, :create] do

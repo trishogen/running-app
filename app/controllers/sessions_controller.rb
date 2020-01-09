@@ -5,8 +5,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: params[:user][:email])
-    return head(:forbidden) unless params[:password] == @user.password
+    if auth
+      @user = User.find_by(email: auth['info']['email'])
+      if @user.nil?
+        @user = User.create(email: auth['info']['email'], uid: auth['uid'],
+          first_name: auth['info']['first_name'])
+          raise @user.errors.inspect
+      end
+    else
+      @user = User.find_by(email: params[:user][:email])
+      return head(:forbidden) unless params[:password] == @user.password
+    end
+
     session[:user_id] = @user.id
     redirect_to root_path
   end
@@ -14,6 +24,12 @@ class SessionsController < ApplicationController
   def destroy
     session.delete :user_id if session[:user_id]
     redirect_to login_path
+  end
+
+  private
+
+  def auth
+    request.env['omniauth.auth']
   end
 
 end

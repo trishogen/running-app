@@ -8213,3 +8213,1147 @@ Processing by RunsController#show as HTML
 Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/users/1/runs/2/edit" for ::1 at 2020-01-02 20:33:51 -0500
+Processing by RunsController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:40
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:41
+  Rendering runs/edit.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (2.5ms)
+  Rendered runs/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 20ms (Views: 16.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/runs/2" for ::1 at 2020-01-02 20:34:00 -0500
+Processing by RunsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nLv/tFmM2UMnpM7r1C/dzROPAih/dAIN7zmLQUVEdvvcUUXtGw3u6XSCyb1tQsO9X//G/zru5ToQzHu15l0RKQ==", "run"=>{"user_id"=>"1", "title"=>"Sunday morning run", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23.0", "mood"=>"Great", "notes"=>"Conditions were slippery"}, "commit"=>"Submit", "id"=>"2"}
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[36mRoute Load (0.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/runs_controller.rb:47
+Redirected to http://localhost:3000/users/2/runs/2
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/runs/2" for ::1 at 2020-01-02 20:34:00 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+Redirected to http://localhost:3000/users/1/runs
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2020-01-02 20:34:00 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:6
+  Rendered runs/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/runs/2" for ::1 at 2020-01-02 20:34:47 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+  [1m[36mRun Load (0.5ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:11
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 28.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/runs/2/edit" for ::1 at 2020-01-02 20:34:48 -0500
+Processing by RunsController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:40
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:41
+  Rendering runs/edit.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (3.6ms)
+  Rendered runs/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/runs/2" for ::1 at 2020-01-02 20:34:49 -0500
+Processing by RunsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BohjxfbxLST1FJwzjUnGhKpuhCu9E/kCoMw4Ae1yB21GYtmctHAajqYym2U0JNj05h5A/PiJHjVfOcj1Tmtgvw==", "run"=>{"user_id"=>"1", "title"=>"Sunday morning run", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23.0", "mood"=>"Great", "notes"=>"Conditions were slippery"}, "commit"=>"Submit", "id"=>"2"}
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/runs_controller.rb:47
+Redirected to http://localhost:3000/users/2/runs/2
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2/runs/2" for ::1 at 2020-01-02 20:34:49 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+Redirected to http://localhost:3000/users/1/runs
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2020-01-02 20:34:49 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:6
+  Rendered runs/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/runs/2" for ::1 at 2020-01-02 20:36:12 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:11
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 40ms (Views: 19.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1/runs/2/edit" for ::1 at 2020-01-02 20:36:13 -0500
+Processing by RunsController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:40
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:41
+  Rendering runs/edit.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:5
+  Rendered runs/_form.html.erb (3.3ms)
+  Rendered runs/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/runs/2" for ::1 at 2020-01-02 20:36:14 -0500
+Processing by RunsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gzt8ZYqennFdxJDdRcPxBu4bJ2YJzSdXxlefJh+EDF1b0cY8yB+p2w7il4v8ru92omvjsUxXwGA5om/SvJ1rjw==", "run"=>{"user_id"=>"1", "title"=>"Sunday morning run", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23.0", "mood"=>"Great", "notes"=>"Conditions were slippery"}, "commit"=>"Submit", "id"=>"2"}
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/runs_controller.rb:47
+Redirected to http://localhost:3000/runs/2
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/runs/2" for ::1 at 2020-01-02 20:36:14 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `runs' for nil:NilClass):
+  
+app/controllers/runs_controller.rb:11:in `show'
+Started GET "/runs/2" for ::1 at 2020-01-02 20:36:50 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `runs' for nil:NilClass):
+  
+app/controllers/runs_controller.rb:11:in `show'
+Started PATCH "/runs/2" for ::1 at 2020-01-02 20:36:54 -0500
+Processing by RunsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1zgNvpvUR4jyVovw3N30hXBgzK7FxmfmuIJdS3P2p7r9FCWT5pDMPeLLfKuoajyosn3ryFL0wsMz6hyknTj/FA==", "run"=>{"user_id"=>"1", "title"=>"Sunday morning run", "date(1i)"=>"2019", "date(2i)"=>"12", "date(3i)"=>"15", "route_id"=>"3", "run_time"=>"23.0", "mood"=>"Great", "notes"=>"Conditions were slippery"}, "commit"=>"Submit", "id"=>"2"}
+  [1m[36mRun Load (0.3ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/runs_controller.rb:47
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+Redirected to http://localhost:3000/users/1/runs/2
+Completed 302 Found in 30ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1/runs/2" for ::1 at 2020-01-02 20:36:54 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:10
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:11
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2020-01-02 20:37:06 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.3ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:6
+  Rendered runs/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-01-02 20:37:07 -0500
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for ::1 at 2020-01-02 20:37:08 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/routes/3" for ::1 at 2020-01-02 20:37:09 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/3/edit" for ::1 at 2020-01-02 20:37:10 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:26
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (1.2ms)
+  Rendered routes/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/routes/3" for ::1 at 2020-01-02 20:37:15 -0500
+Processing by RoutesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ui4bCHOnAFydtMW+VhyYrFpCZ+xgiLPBZPOrrOi2/YFMafVRMVGidLEt76/Vmz69xWwA5W1+9CbadwAbgBKUA==", "route"=>{"title"=>"Prospect Park Loop", "location"=>"Brooklyn", "distance"=>"3.0", "elevation"=>"102", "description"=>"Easy run through prospect park"}, "commit"=>"Submit", "id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[36mRoute Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? AND "routes"."id" != ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+Redirected to http://localhost:3000/routes/3
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/routes/3" for ::1 at 2020-01-02 20:37:15 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for ::1 at 2020-01-02 20:41:45 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/4" for ::1 at 2020-01-02 20:41:48 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes" for ::1 at 2020-01-02 20:41:49 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-01-07 23:06:42 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 241ms (Views: 221.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/routes" for ::1 at 2020-01-07 23:06:47 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 28ms (Views: 21.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/routes/3" for ::1 at 2020-01-07 23:06:48 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/routes/4" for ::1 at 2020-01-07 23:06:51 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/4" for ::1 at 2020-01-07 23:06:54 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/4/edit" for ::1 at 2020-01-07 23:06:55 -0500
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:26
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/_form.html.erb (8.1ms)
+  Rendered routes/edit.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/routes/4" for ::1 at 2020-01-07 23:06:58 -0500
+Processing by RoutesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/6n/f6mu0sxKT7Q33sn7/2q47GpJEHVhOMWbBxkbI2WMGsZ86fvZBJZrvvmhkOrri8tUPa5Mya+NYObK5bsPVQ==", "route"=>{"title"=>"Central Park Loop", "location"=>"Manhattan", "distance"=>"10.0", "elevation"=>"54", "description"=>""}, "commit"=>"Submit", "id"=>"4"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? AND "routes"."id" != ? LIMIT ?[0m  [["title", "Central Park Loop"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/routes_controller.rb:31
+Redirected to http://localhost:3000/routes/4
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/routes/4" for ::1 at 2020-01-07 23:06:58 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:22
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for ::1 at 2020-01-07 23:07:00 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 19:23:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 192ms (Views: 168.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout" for ::1 at 2020-01-08 19:23:04 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Z/t0OpadAS6TK2EUQ55EmHat+EaeQR4PMX0fHjgurkdN11wX69mKm4O2lk83KYy1tLDfIAlzuyq6FV7x1uD26Q=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-01-08 19:23:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 19:23:13 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 19:23:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-01-08 19:37:43 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 19:37:45 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 19:37:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-01-08 19:37:53 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 19:38:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 171ms (Views: 167.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 19:38:03 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 19:38:04 -0500
+Started GET "/auth/google_oauth2/callback?state=3d845deb4b7301ff77a94d9948e21c26023c74f72ccdbc5a&code=4%2FvAGkoruSbGVPDTjtqUj4mRQnHJlgqAkLro49u53GjfonIIa4FuHhR271E4TuFAtDFTeYHSjLzMHR9_yy4RecdmM&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=1245bdb9b3768b451e0a76bfe89613b39bfc2ccc..e52e&prompt=consent" for ::1 at 2020-01-08 19:38:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"3d845deb4b7301ff77a94d9948e21c26023c74f72ccdbc5a", "code"=>"4/vAGkoruSbGVPDTjtqUj4mRQnHJlgqAkLro49u53GjfonIIa4FuHhR271E4TuFAtDFTeYHSjLzMHR9_yy4RecdmM", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"1245bdb9b3768b451e0a76bfe89613b39bfc2ccc..e52e", "prompt"=>"consent"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/auth/google_oauth2/callback?state=3d845deb4b7301ff77a94d9948e21c26023c74f72ccdbc5a&code=4%2FvAGRTPGIITISdZDs-eDfI3x2JWHqD24J6iIYq3uuY_Mf0tD6kbpyHGNFpYpOr4nxpxiCCs8RNXoP1ZXunwvApXI&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=a1228b7fe3374f959734107e881f245c6b042b44..f3d2&prompt=consent" for ::1 at 2020-01-08 21:44:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"3d845deb4b7301ff77a94d9948e21c26023c74f72ccdbc5a", "code"=>"4/vAGRTPGIITISdZDs-eDfI3x2JWHqD24J6iIYq3uuY_Mf0tD6kbpyHGNFpYpOr4nxpxiCCs8RNXoP1ZXunwvApXI", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"a1228b7fe3374f959734107e881f245c6b042b44..f3d2", "prompt"=>"consent"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/" for ::1 at 2020-01-08 21:44:35 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 21:44:36 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 21:44:36 -0500
+Started GET "/auth/google_oauth2/callback?state=1082ffec7c2d94d396110ea120eac86f745fee3650149d41&code=4%2FvAFL9JCEJZUL6s0jxP1GaKgQg_ZePG0tsj7IQinPbhrRAOMspMDqRdDt2znHEN51iha3Ct1n8L3SVLtLTnSbH5A&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=a03af6458a3c276799842c93ad50d0c64762c4bd..b926&prompt=consent" for ::1 at 2020-01-08 21:44:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"1082ffec7c2d94d396110ea120eac86f745fee3650149d41", "code"=>"4/vAFL9JCEJZUL6s0jxP1GaKgQg_ZePG0tsj7IQinPbhrRAOMspMDqRdDt2znHEN51iha3Ct1n8L3SVLtLTnSbH5A", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"a03af6458a3c276799842c93ad50d0c64762c4bd..b926", "prompt"=>"consent"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/auth/google_oauth2/callback?state=1082ffec7c2d94d396110ea120eac86f745fee3650149d41&code=4%2FvAGJ_8ZlmZX1g3Melt3IwJmXc4cp0oVYBJ8yRw6yPwINX2bgUkq7KnvjuoMJIscWNJyqeqt2yD9-t73-FEGq4Jw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=a2fc7a54f793e4a3d2bd5b220b0575c5cfa4b141..510a&prompt=consent" for ::1 at 2020-01-08 21:45:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"1082ffec7c2d94d396110ea120eac86f745fee3650149d41", "code"=>"4/vAGJ_8ZlmZX1g3Melt3IwJmXc4cp0oVYBJ8yRw6yPwINX2bgUkq7KnvjuoMJIscWNJyqeqt2yD9-t73-FEGq4Jw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"a2fc7a54f793e4a3d2bd5b220b0575c5cfa4b141..510a", "prompt"=>"consent"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1578541504 refresh_token="1//0dtPYuAap7AEdCgYIARAAGA0SNwF-L9IrOxFZTAalcQf5VMU4IqZP5G-cIYLcvX-oNJAwUV1smQd2jzvX6XHAyMhRq6JsLJmz688" token="ya29.Il-4B0msvuYp418A7BnAc-NGR8PLbpW1GYEg0qkkqsPBSDiohFBwZ3jJIVBwcxpgsI-mN7Ukav3_AYCEN-kINkmev3SwrSZBzBlh47Gmwi4jJwne0nDUBdrPaz5SVzVE4Q"> extra=#<OmniAuth::AuthHash id_info=#<OmniAuth::AuthHash at_hash="UAQzAj9_vWPBkECx6X3bfA" aud="605947402679-6ra81799bcupnis6h3g0h67u14622dn4.apps.googleusercontent.com" azp="605947402679-6ra81799bcupnis6h3g0h67u14622dn4.apps.googleusercontent.com" email="patriciaogen@gmail.com" email_verified=true exp=1578541504 family_name="Ogen" given_name="Patricia" iat=1578537904 iss="https://accounts.google.com" locale="en" name="Patricia Ogen" picture="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/s96-c/photo.jpg" sub="114396825748217958374"> id_token="eyJhbGciOiJSUzI1NiIsImtpZCI6ImNkMjM0OTg4ZTNhYWU2N2FmYmMwMmNiMWM0MTQwYjNjZjk2ODJjYWEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI2MDU5NDc0MDI2NzktNnJhODE3OTliY3VwbmlzNmgzZzBoNjd1MTQ2MjJkbjQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI2MDU5NDc0MDI2NzktNnJhODE3OTliY3VwbmlzNmgzZzBoNjd1MTQ2MjJkbjQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQzOTY4MjU3NDgyMTc5NTgzNzQiLCJlbWFpbCI6InBhdHJpY2lhb2dlbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IlVBUXpBajlfdldQQmtFQ3g2WDNiZkEiLCJuYW1lIjoiUGF0cmljaWEgT2dlbiIsInBpY3R1cmUiOiJodHRwczovL2xoNS5nb29nbGV1c2VyY29udGVudC5jb20vLU4xQlJQcGpZVi1zL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FDSGkzcmVrVDBWckt4M01OWDZmZlRneXJnVWk1cEhDaHcvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IlBhdHJpY2lhIiwiZmFtaWx5X25hbWUiOiJPZ2VuIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE1Nzg1Mzc5MDQsImV4cCI6MTU3ODU0MTUwNH0.FDBTpZ3skZjMWQH2qHnhvslb1wZDWK9AqDFf4UqBgBfeOudeGoQD44q9loi3NpDVWBF9Xs9peJyD100iiIOStdWhBG6J_T28ijkUvD79szAJPnXpcS1xcUN0PdroUlS36UHth8bsf6xkX73GTp0ZHgvjm76dB4utlfcU8szEk-thCI9p6MJInjEHQ1P80cBoC8w4zd-JQtOmZGJaqOf6ROtSeNdtdfYIrRE6aBgmkde8Xy0bdmBdHXD0X2TNLFJlYx87s6_RtHfZzmarcQ7gxw_QoKTliCAXCx_0TioeVaH1lBdq_YcMQVU0XxxEOZSaLowCEAOSGiVTiQ4hmYIOqQ" raw_info=#<OmniAuth::AuthHash email="patriciaogen@gmail.com" email_verified=true family_name="Ogen" given_name="Patricia" locale="en" name="Patricia Ogen" picture="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/photo.jpg" sub="114396825748217958374">> info=#<OmniAuth::AuthHash::InfoHash email="patriciaogen@gmail.com" email_verified=true first_name="Patricia" image="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/photo.jpg" last_name="Ogen" name="Patricia Ogen" unverified_email="patriciaogen@gmail.com"> provider="google_oauth2" uid="114396825748217958374">):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to AddUidToUsers (20200109025545)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  ↳ db/migrate/20200109025545_add_uid_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200109025545"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Started GET "/auth/google_oauth2/callback?state=1082ffec7c2d94d396110ea120eac86f745fee3650149d41&code=4%2FvAEpaq8zmTNHwcxT4Lpmr7vzChlMY2aswxHfljYKvZIOwSKNcdZNMd8jftHVW7k8UdsyG4-xClESkzDln8mtKpU&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=e10e744b2cc6ebe5978903b3fada56d369c823a9..66f9&prompt=consent" for ::1 at 2020-01-08 22:03:51 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"1082ffec7c2d94d396110ea120eac86f745fee3650149d41", "code"=>"4/vAEpaq8zmTNHwcxT4Lpmr7vzChlMY2aswxHfljYKvZIOwSKNcdZNMd8jftHVW7k8UdsyG4-xClESkzDln8mtKpU", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"e10e744b2cc6ebe5978903b3fada56d369c823a9..66f9", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "114396825748217958374"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:9
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 22:03:52 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 169ms (Views: 168.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:03:59 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:03:59 -0500
+Started GET "/auth/google_oauth2/callback?state=9eef5369c29f719c11a35aff3dc9706cc6023c9342e84053&code=4%2FvAHGNs--xzBa_KYhacgyKrCiRiOj82TF1ARwcD1FK6L1tK5qhUwQZqGcfN0f3gb972uqst6M2t6PcPJDOCRPX-M&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=a58b4061205afea1ab529f73a4bcbe889ed91002..6459&prompt=consent" for ::1 at 2020-01-08 22:04:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"9eef5369c29f719c11a35aff3dc9706cc6023c9342e84053", "code"=>"4/vAHGNs--xzBa_KYhacgyKrCiRiOj82TF1ARwcD1FK6L1tK5qhUwQZqGcfN0f3gb972uqst6M2t6PcPJDOCRPX-M", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"a58b4061205afea1ab529f73a4bcbe889ed91002..6459", "prompt"=>"consent"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "114396825748217958374"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:9
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 22:04:03 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:07:42 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:07:42 -0500
+Started GET "/auth/google_oauth2/callback?state=3ac943069b1305653b30c68340f0865308c354acc14decd0&code=4%2FvAGfO9VPMmdBwMvWRTNv5fv23gQ8Uk5XV6sretLDdrqCsi-iTZOAxQFkw0q_tQPvz46ZBQe0hsf9UB6ZKRPwK7I&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=366f8ca8d958f55d2370de05602e7e0f38346d00..e645&prompt=consent" for ::1 at 2020-01-08 22:07:47 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"3ac943069b1305653b30c68340f0865308c354acc14decd0", "code"=>"4/vAGfO9VPMmdBwMvWRTNv5fv23gQ8Uk5XV6sretLDdrqCsi-iTZOAxQFkw0q_tQPvz46ZBQe0hsf9UB6ZKRPwK7I", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"366f8ca8d958f55d2370de05602e7e0f38346d00..e645", "prompt"=>"consent"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1578542867 refresh_token="1//0dl_FdN_v_l92CgYIARAAGA0SNwF-L9IrqerSQl6iYdou20dtd_goJQjt93hW5pabwexeUXvMqIOahYoYMVta5IJgPrUuq851Kpc" token="ya29.Il-4B3TCD1wNdNG1dzNDPQNo7aw-T-M6J6iMw00kSEHEnMmgYmz5TOMUVyaPSkPOjld6C5WyusVZykQkwbjTE0mOwujZJAzVvTVf1IWqMSAkEkNUPZJTbYfomwZmVYsFKA"> extra=#<OmniAuth::AuthHash id_info=#<OmniAuth::AuthHash at_hash="Zjaszq4hzAMnvgtcigVeEA" aud="605947402679-6ra81799bcupnis6h3g0h67u14622dn4.apps.googleusercontent.com" azp="605947402679-6ra81799bcupnis6h3g0h67u14622dn4.apps.googleusercontent.com" email="patriciaogen@gmail.com" email_verified=true exp=1578542867 family_name="Ogen" given_name="Patricia" iat=1578539267 iss="https://accounts.google.com" locale="en" name="Patricia Ogen" picture="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/s96-c/photo.jpg" sub="114396825748217958374"> id_token="eyJhbGciOiJSUzI1NiIsImtpZCI6ImNkMjM0OTg4ZTNhYWU2N2FmYmMwMmNiMWM0MTQwYjNjZjk2ODJjYWEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI2MDU5NDc0MDI2NzktNnJhODE3OTliY3VwbmlzNmgzZzBoNjd1MTQ2MjJkbjQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI2MDU5NDc0MDI2NzktNnJhODE3OTliY3VwbmlzNmgzZzBoNjd1MTQ2MjJkbjQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQzOTY4MjU3NDgyMTc5NTgzNzQiLCJlbWFpbCI6InBhdHJpY2lhb2dlbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IlpqYXN6cTRoekFNbnZndGNpZ1ZlRUEiLCJuYW1lIjoiUGF0cmljaWEgT2dlbiIsInBpY3R1cmUiOiJodHRwczovL2xoNS5nb29nbGV1c2VyY29udGVudC5jb20vLU4xQlJQcGpZVi1zL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FDSGkzcmVrVDBWckt4M01OWDZmZlRneXJnVWk1cEhDaHcvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IlBhdHJpY2lhIiwiZmFtaWx5X25hbWUiOiJPZ2VuIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE1Nzg1MzkyNjcsImV4cCI6MTU3ODU0Mjg2N30.R869ip8id3cbw7VSz36KiH00OE_silTNvIxEDvHKNjzjEQR2OEykr6D2azm-hW7NaxiRR1U-TE82H4imREtHJ12cBepw-lvuw86hduJNkJTaRlgArWXF6wF2XKe9FZ5TQ1ywhsSqdVYDtA5kfwJ6YYuuybBsc4KohGkgBKzkuOH2-3rkspCWnylhfk-a2qVCVOmUTWzZTIu7suxUaUfmHoIRwNobwRgGn2Afzw7x_gv3Jie0en0Lj0qr8PIZFsXzZ6F5vT37x2KJkHq4Gox6MFcmy-mTat-_gbS1qx5FWCVNcOf2mDsVagRHk8anMRDfgFnZwfXIjfHTeMROwUn_Bg" raw_info=#<OmniAuth::AuthHash email="patriciaogen@gmail.com" email_verified=true family_name="Ogen" given_name="Patricia" locale="en" name="Patricia Ogen" picture="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/photo.jpg" sub="114396825748217958374">> info=#<OmniAuth::AuthHash::InfoHash email="patriciaogen@gmail.com" email_verified=true first_name="Patricia" image="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/photo.jpg" last_name="Ogen" name="Patricia Ogen" unverified_email="patriciaogen@gmail.com"> provider="google_oauth2" uid="114396825748217958374">):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:11:16 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:11:16 -0500
+Started GET "/auth/google_oauth2/callback?state=f7645cf346268315e50a18664b8eb46ecfd0362cf4e5b456&code=4%2FvAHf0KY76cR1QUAWZSwBuM2OsBV9nQoMZRQY6gb1avWIob9uXFAqe2yF77TA9eOcnZXUBV7kYEJDgBNft7KLino&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=da48f80475fb866d9bbda0ce64cc085ef3977680..40cc&prompt=consent" for ::1 at 2020-01-08 22:11:19 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"f7645cf346268315e50a18664b8eb46ecfd0362cf4e5b456", "code"=>"4/vAHf0KY76cR1QUAWZSwBuM2OsBV9nQoMZRQY6gb1avWIob9uXFAqe2yF77TA9eOcnZXUBV7kYEJDgBNft7KLino", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"da48f80475fb866d9bbda0ce64cc085ef3977680..40cc", "prompt"=>"consent"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1578543080 refresh_token="1//0dymW0eM2JJpsCgYIARAAGA0SNwF-L9IrHA6mvRuFJHKZr7Jkmcf8FCO8Z7iJHD-4Bo4RvSz0hVQGDeSFOBlBZObDkdeDW4ZVjZQ" token="ya29.Il-4B4slcZHZkaJUo3A91i1JwrIYRVFJ29odt2FnuQrSQe2AkOs8ufcOKaNQfgyEvbLhJkuWZSY_yHNPpyOCfV9FwAEkJbzulAjsY4F89DrN7mcG4nLR81GOsOcgSEDf9A"> extra=#<OmniAuth::AuthHash id_info=#<OmniAuth::AuthHash at_hash="nLCOyXT4V-uiioMJuRihag" aud="605947402679-6ra81799bcupnis6h3g0h67u14622dn4.apps.googleusercontent.com" azp="605947402679-6ra81799bcupnis6h3g0h67u14622dn4.apps.googleusercontent.com" email="patriciaogen@gmail.com" email_verified=true exp=1578543080 family_name="Ogen" given_name="Patricia" iat=1578539480 iss="https://accounts.google.com" locale="en" name="Patricia Ogen" picture="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/s96-c/photo.jpg" sub="114396825748217958374"> id_token="eyJhbGciOiJSUzI1NiIsImtpZCI6ImNkMjM0OTg4ZTNhYWU2N2FmYmMwMmNiMWM0MTQwYjNjZjk2ODJjYWEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI2MDU5NDc0MDI2NzktNnJhODE3OTliY3VwbmlzNmgzZzBoNjd1MTQ2MjJkbjQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI2MDU5NDc0MDI2NzktNnJhODE3OTliY3VwbmlzNmgzZzBoNjd1MTQ2MjJkbjQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQzOTY4MjU3NDgyMTc5NTgzNzQiLCJlbWFpbCI6InBhdHJpY2lhb2dlbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6Im5MQ095WFQ0Vi11aWlvTUp1UmloYWciLCJuYW1lIjoiUGF0cmljaWEgT2dlbiIsInBpY3R1cmUiOiJodHRwczovL2xoNS5nb29nbGV1c2VyY29udGVudC5jb20vLU4xQlJQcGpZVi1zL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FDSGkzcmVrVDBWckt4M01OWDZmZlRneXJnVWk1cEhDaHcvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IlBhdHJpY2lhIiwiZmFtaWx5X25hbWUiOiJPZ2VuIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE1Nzg1Mzk0ODAsImV4cCI6MTU3ODU0MzA4MH0.hxmXYBhKAecLN7V4-zjzbbduFoDhFyQ5gHboxhOS-lSGl8LLmp8r6ghOjabBP9s8sbnYmM1sSGqgKzfPdeEikdEcQZ1TDxYduS-Qilkog1Rze1Buh4r5yvljqUcvOKuQHwneoYSJZ6Ii71eKCN2auP19NGiUHuX4MsYNhRnzLMnviNNS6PY72cBWWeIumre9G2DBh5zQXwaiGDzpHBJhsFoMYrrcIHLYE6Us-g_oHBvz5ByikznM33yisSLH00b_CYVmcs8LcK1gwGP54x2AgycbVePGNRAToFt-zBZ9W-LkD06yi09Oo8WP52C-bUtJChkuqk5AsdBxC5GaqmwwJQ" raw_info=#<OmniAuth::AuthHash email="patriciaogen@gmail.com" email_verified=true family_name="Ogen" given_name="Patricia" locale="en" name="Patricia Ogen" picture="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/photo.jpg" sub="114396825748217958374">> info=#<OmniAuth::AuthHash::InfoHash email="patriciaogen@gmail.com" email_verified=true first_name="Patricia" image="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/photo.jpg" last_name="Ogen" name="Patricia Ogen" unverified_email="patriciaogen@gmail.com"> provider="google_oauth2" uid="114396825748217958374">):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/auth/google_oauth2/callback?state=f7645cf346268315e50a18664b8eb46ecfd0362cf4e5b456&code=4%2FvAFFgM7NYrpJEUDMZBWjRKTBvSaGDh4-ZoQ0zBKmvmMvPVodU1jxTQTy_yZSPZSOEX4zVDTvo0fdYoCqJBjj3VA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=0ace7ca3422afe41fb6f5d459da77293582659d0..82e4&prompt=consent" for ::1 at 2020-01-08 22:12:09 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"f7645cf346268315e50a18664b8eb46ecfd0362cf4e5b456", "code"=>"4/vAFFgM7NYrpJEUDMZBWjRKTBvSaGDh4-ZoQ0zBKmvmMvPVodU1jxTQTy_yZSPZSOEX4zVDTvo0fdYoCqJBjj3VA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"0ace7ca3422afe41fb6f5d459da77293582659d0..82e4", "prompt"=>"consent"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1578543129 refresh_token="1//0dUFKvfkVWMQoCgYIARAAGA0SNwF-L9IrINL3B-gnsNBIh7yeo3tarQbFTXmYMv0zzv4jpTcchE8sbtCSBu3dozQiELNuDKMmbsQ" token="ya29.Il-4B6iNOzIZ9p77LvBs7lzpVBkaomA4wyd3VeaFk-S5uJD_VrEmlDQWnKNrySVj35Ujr0avceY8VMV3NHEKYYPSPc4dGMA3UEd_E3Q8hYHUZjMdzNwtp9aaDkl7NqbkoQ"> extra=#<OmniAuth::AuthHash id_info=#<OmniAuth::AuthHash at_hash="7Wq9rW7GdhGYmLI9wZY9rQ" aud="605947402679-6ra81799bcupnis6h3g0h67u14622dn4.apps.googleusercontent.com" azp="605947402679-6ra81799bcupnis6h3g0h67u14622dn4.apps.googleusercontent.com" email="patriciaogen@gmail.com" email_verified=true exp=1578543129 family_name="Ogen" given_name="Patricia" iat=1578539529 iss="https://accounts.google.com" locale="en" name="Patricia Ogen" picture="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/s96-c/photo.jpg" sub="114396825748217958374"> id_token="eyJhbGciOiJSUzI1NiIsImtpZCI6ImNkMjM0OTg4ZTNhYWU2N2FmYmMwMmNiMWM0MTQwYjNjZjk2ODJjYWEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI2MDU5NDc0MDI2NzktNnJhODE3OTliY3VwbmlzNmgzZzBoNjd1MTQ2MjJkbjQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI2MDU5NDc0MDI2NzktNnJhODE3OTliY3VwbmlzNmgzZzBoNjd1MTQ2MjJkbjQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQzOTY4MjU3NDgyMTc5NTgzNzQiLCJlbWFpbCI6InBhdHJpY2lhb2dlbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IjdXcTlyVzdHZGhHWW1MSTl3Wlk5clEiLCJuYW1lIjoiUGF0cmljaWEgT2dlbiIsInBpY3R1cmUiOiJodHRwczovL2xoNS5nb29nbGV1c2VyY29udGVudC5jb20vLU4xQlJQcGpZVi1zL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FDSGkzcmVrVDBWckt4M01OWDZmZlRneXJnVWk1cEhDaHcvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IlBhdHJpY2lhIiwiZmFtaWx5X25hbWUiOiJPZ2VuIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE1Nzg1Mzk1MjksImV4cCI6MTU3ODU0MzEyOX0.Eol4LnhyZJvXnqqa2g7gOhAqDLKpBHK9iZiCAAtFf3UnHZzbZYgKN6Bj7N2RnjcWmMqGOxjn0IF8-CGJmOVwn61_NNTTJCcYVyMLsAvGeUwfny23rEYj9T1sR46AfVnBkIalxs-U4iy4F-n9LoB3klzoj-PUFKxLf3mzC5nxDtJQaejsDxIZ1Q6KOV2zSAEiutArB_jTR7ai2F0b3KcC8xPlBfpQvQ2a7as-zSpXYyuNo-Swk4KsGaHMD7oqBuVl_t5rwDa0SAEN1gISyNwnkF1eqLrp7Zj6G7UrL7_JRdwiWT127XTLQ5i_O_2uMQPnl8iTNCRDaPo9XWcBXY2Z6A" raw_info=#<OmniAuth::AuthHash email="patriciaogen@gmail.com" email_verified=true family_name="Ogen" given_name="Patricia" locale="en" name="Patricia Ogen" picture="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/photo.jpg" sub="114396825748217958374">> info=#<OmniAuth::AuthHash::InfoHash email="patriciaogen@gmail.com" email_verified=true first_name="Patricia" image="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/photo.jpg" last_name="Ogen" name="Patricia Ogen" unverified_email="patriciaogen@gmail.com"> provider="google_oauth2" uid="114396825748217958374">):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/auth/google_oauth2/callback?state=f7645cf346268315e50a18664b8eb46ecfd0362cf4e5b456&code=4%2FvAFFgM7NYrpJEUDMZBWjRKTBvSaGDh4-ZoQ0zBKmvmMvPVodU1jxTQTy_yZSPZSOEX4zVDTvo0fdYoCqJBjj3VA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=0ace7ca3422afe41fb6f5d459da77293582659d0..82e4&prompt=consent" for ::1 at 2020-01-08 22:12:32 -0500
+  
+OAuth2::Error (invalid_grant: Bad Request
+{
+  "error": "invalid_grant",
+  "error_description": "Bad Request"
+}):
+  
+oauth2 (1.4.2) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.4.2) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.4.2) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-google-oauth2 (0.8.0) lib/omniauth/strategies/google_oauth2.rb:128:in `client_get_token'
+omniauth-google-oauth2 (0.8.0) lib/omniauth/strategies/google_oauth2.rb:112:in `get_access_token'
+omniauth-google-oauth2 (0.8.0) lib/omniauth/strategies/google_oauth2.rb:92:in `custom_build_access_token'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth (1.9.0) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/auth/google_oauth2/callback?state=f7645cf346268315e50a18664b8eb46ecfd0362cf4e5b456&code=4%2FvAHhkEbzZzS1Xcf-8izocWoH26Et5GDRxggrqlF-X8hG_REUr8z5lubJqKzb_pZk4XGQzAvIrc21AzYK2NSj3nQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=db257cb35c732619a2f5947f816cab165c3f23f4..d1ff&prompt=consent" for ::1 at 2020-01-08 22:12:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"f7645cf346268315e50a18664b8eb46ecfd0362cf4e5b456", "code"=>"4/vAHhkEbzZzS1Xcf-8izocWoH26Et5GDRxggrqlF-X8hG_REUr8z5lubJqKzb_pZk4XGQzAvIrc21AzYK2NSj3nQ", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"db257cb35c732619a2f5947f816cab165c3f23f4..d1ff", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "114396825748217958374"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:9
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 22:12:42 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:40:22 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:40:22 -0500
+Started GET "/auth/google_oauth2/callback?state=5cd8da8115f9bba626c2849682cfefc6e0a357abfcdfdb1e&code=4%2FvAFuhdOas0tlbdeuLyp0ZO0rCXKBueD3OTlsU36r4S690bY6DL3WHF6YscGsQnWIQFWMN1kqMgCGTHvf-2a5ZZo&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=7dd47b5026145097882a42184e43b7b1ff7b882a..0698&prompt=consent" for ::1 at 2020-01-08 22:40:25 -0500
+  
+SyntaxError (/Users/trishogen/workspace/running-app/app/controllers/sessions_controller.rb:9: syntax error, unexpected ':', expecting ')'
+...   @user = User.find_by(:email: auth['email'])
+...                              ^
+/Users/trishogen/workspace/running-app/app/controllers/sessions_controller.rb:9: syntax error, unexpected ')', expecting end
+....find_by(:email: auth['email'])
+...                              ^):
+  
+app/controllers/sessions_controller.rb:9: syntax error, unexpected ':', expecting ')'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected ')', expecting end
+Started GET "/auth/google_oauth2/callback?state=5cd8da8115f9bba626c2849682cfefc6e0a357abfcdfdb1e&code=4%2FvAGcPPo-FNnPubvfcFdUzpKnt-VfSigGXkX908wASaB6qXRXZvO29tv-BL7KjcvDYcHTTqYOfxs0FhUFzdB4B04&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=a307e91661f040791bd452ab4cf063aaaf75c4df..d0e0&prompt=consent" for ::1 at 2020-01-08 22:41:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"5cd8da8115f9bba626c2849682cfefc6e0a357abfcdfdb1e", "code"=>"4/vAGcPPo-FNnPubvfcFdUzpKnt-VfSigGXkX908wASaB6qXRXZvO29tv-BL7KjcvDYcHTTqYOfxs0FhUFzdB4B04", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"a307e91661f040791bd452ab4cf063aaaf75c4df..d0e0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started GET "/auth/google_oauth2/callback?state=5cd8da8115f9bba626c2849682cfefc6e0a357abfcdfdb1e&code=4%2FvAH4nD2HWzj-wKRPIhT_6B3NgGfXtNdAcFdEqKsGv_2oTKQIChTinw5iU9bOqHA8zHTMw7wDFJjXl2c16pcJ8CM&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=ddd61b1126b3e412a31d3f39f765e6fc7c915f58..86e7&prompt=consent" for ::1 at 2020-01-08 22:42:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"5cd8da8115f9bba626c2849682cfefc6e0a357abfcdfdb1e", "code"=>"4/vAH4nD2HWzj-wKRPIhT_6B3NgGfXtNdAcFdEqKsGv_2oTKQIChTinw5iU9bOqHA8zHTMw7wDFJjXl2c16pcJ8CM", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"ddd61b1126b3e412a31d3f39f765e6fc7c915f58..86e7", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (undefined local variable or method `null' for #<User:0x00007fb2dc34ac38>):
+  
+app/models/user.rb:18:in `password_required?'
+app/controllers/sessions_controller.rb:11:in `create'
+Started GET "/auth/google_oauth2/callback?state=5cd8da8115f9bba626c2849682cfefc6e0a357abfcdfdb1e&code=4%2FvAGfJ82yaxfTRNemFp0xjXrhTubwFxG4N-cRD8nWUszT-5LTbNS7hS96xBVLZEzCdIeo542DmAcVpn8RDiEDz_U&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=b693ba26c70ebe2888be36f4989d3aaeab6f8730..76cc&prompt=consent" for ::1 at 2020-01-08 22:42:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"5cd8da8115f9bba626c2849682cfefc6e0a357abfcdfdb1e", "code"=>"4/vAGfJ82yaxfTRNemFp0xjXrhTubwFxG4N-cRD8nWUszT-5LTbNS7hS96xBVLZEzCdIeo542DmAcVpn8RDiEDz_U", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"b693ba26c70ebe2888be36f4989d3aaeab6f8730..76cc", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 22:42:56 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "new@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:52:48 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:52:49 -0500
+Started GET "/auth/google_oauth2/callback?state=3d7b71db71b8eaf51dac6ab641ab49f0a840ba60af0bcf8c&code=4%2FvAHS4KBe6EpVvJbB_sbbfWzQizA5Z5GGOTI-1IucfKsbVUrZwvc-fXsmLs2Q6u7nqrEuwF6W9BP1nRsJYjxxBrE&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=e4960230dd0c2415f80f29c8e2118036d47d070e..45ac&prompt=consent" for ::1 at 2020-01-08 22:52:52 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"3d7b71db71b8eaf51dac6ab641ab49f0a840ba60af0bcf8c", "code"=>"4/vAHS4KBe6EpVvJbB_sbbfWzQizA5Z5GGOTI-1IucfKsbVUrZwvc-fXsmLs2Q6u7nqrEuwF6W9BP1nRsJYjxxBrE", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"e4960230dd0c2415f80f29c8e2118036d47d070e..45ac", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 22:52:53 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:53:19 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:53:19 -0500
+Started GET "/" for ::1 at 2020-01-08 22:53:22 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 195ms (Views: 194.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 22:53:26 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:53:27 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:53:28 -0500
+Started GET "/auth/google_oauth2/callback?state=a968c50b176f37745e17428173538ea933860572c5571500&code=4%2FvAHl9AEL-qhWV5neOR_DZbj8GqN6zaAWH_tg-D6pVy4ptF-NKieaXdAjCsb5fqZ7VvMnrvwtRIC-MUn0VGDZQog&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=83607ef25a446c29596d5c259c04583bfb8e1b88..64de&prompt=consent" for ::1 at 2020-01-08 22:53:31 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"a968c50b176f37745e17428173538ea933860572c5571500", "code"=>"4/vAHl9AEL-qhWV5neOR_DZbj8GqN6zaAWH_tg-D6pVy4ptF-NKieaXdAjCsb5fqZ7VvMnrvwtRIC-MUn0VGDZQog", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"83607ef25a446c29596d5c259c04583bfb8e1b88..64de", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 22:53:32 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:54:12 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 22:54:12 -0500
+Started GET "/auth/google_oauth2/callback?state=1fa8ad6044122735bbc3836768fc7a5749a670fec60fcb61&code=4%2FvAFK2hoIii5W-VpJQ4PTa63PQeCovB2Y69gZ3EfEtnJRovHrAHaxSDljZIoAlzQ8_5CfzkPmy8TLKc-I7kE0-u4&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=37bef89e04ae308b3802bdd3e9a5a071beefe987..1e49&prompt=consent" for ::1 at 2020-01-08 22:54:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"1fa8ad6044122735bbc3836768fc7a5749a670fec60fcb61", "code"=>"4/vAFK2hoIii5W-VpJQ4PTa63PQeCovB2Y69gZ3EfEtnJRovHrAHaxSDljZIoAlzQ8_5CfzkPmy8TLKc-I7kE0-u4", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"37bef89e04ae308b3802bdd3e9a5a071beefe987..1e49", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.9ms)
+
+
+  
+RuntimeError ("114396825748217958374"):
+  
+app/models/user.rb:17:in `password_required?'
+app/controllers/sessions_controller.rb:11:in `create'
+Started GET "/auth/google_oauth2/callback?state=1fa8ad6044122735bbc3836768fc7a5749a670fec60fcb61&code=4%2FvAGalN-oyAKEwNBbpRUAD5Dcjdj4pfYDgCHN709RxuJ5jAeSn7f045bfiEepz_h9rLDXK0TSqun_HnjmGsJdrb4&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=56ad8bf7ea00a922a4983600e468d37f705fa601..4fe6&prompt=consent" for ::1 at 2020-01-08 22:55:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"1fa8ad6044122735bbc3836768fc7a5749a670fec60fcb61", "code"=>"4/vAGalN-oyAKEwNBbpRUAD5Dcjdj4pfYDgCHN709RxuJ5jAeSn7f045bfiEepz_h9rLDXK0TSqun_HnjmGsJdrb4", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"56ad8bf7ea00a922a4983600e468d37f705fa601..4fe6", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms)
+
+
+  
+RuntimeError (false):
+  
+app/models/user.rb:17:in `password_required?'
+app/controllers/sessions_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "new@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/auth/google_oauth2/callback?state=1fa8ad6044122735bbc3836768fc7a5749a670fec60fcb61&code=4%2FvAHssiyxQGI21_KOa6vR0zWYplma99h2BCUNY5E3hHRg01DqBLtJMoYoCnEGMJv0om0GdVeO5ElGZ3TCEZz-PRI&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=e579d0d4fc26e82958e330632ed6960b3d1ec508..e00d&prompt=consent" for ::1 at 2020-01-08 22:56:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"1fa8ad6044122735bbc3836768fc7a5749a670fec60fcb61", "code"=>"4/vAHssiyxQGI21_KOa6vR0zWYplma99h2BCUNY5E3hHRg01DqBLtJMoYoCnEGMJv0om0GdVeO5ElGZ3TCEZz-PRI", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"e579d0d4fc26e82958e330632ed6960b3d1ec508..e00d", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms)
+
+
+  
+RuntimeError (false):
+  
+app/models/user.rb:16:in `password_required?'
+app/controllers/sessions_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "new@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "new@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 23:04:00 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 23:04:18 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 23:04:36 -0500
+Started GET "/auth/google_oauth2/callback?state=e7b5500e89e8a7d4b2f516c4145534f6a8e4fee8f5ad1691&code=4%2FvAHM7HEekczWMZjlkoiMq-tP8cNRPl6rzZetq1GSno9m9KPs70LmQqtuEhIBAy5-YH8P0uhGFNZJyAv_QE56cQ8&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=f4bf9c8fda845daa88695e9b95da337068086cf6..fda4&prompt=consent" for ::1 at 2020-01-08 23:04:50 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"e7b5500e89e8a7d4b2f516c4145534f6a8e4fee8f5ad1691", "code"=>"4/vAHM7HEekczWMZjlkoiMq-tP8cNRPl6rzZetq1GSno9m9KPs70LmQqtuEhIBAy5-YH8P0uhGFNZJyAv_QE56cQ8", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"f4bf9c8fda845daa88695e9b95da337068086cf6..fda4", "prompt"=>"consent"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-01-08 23:04:50 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 23:05:24 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 23:05:24 -0500
+Started GET "/auth/google_oauth2/callback?state=a99fd1bc4b0231b70e7c313211e13c48062481e2c0c788f1&code=4%2FvAEX97dhNfl-wGMWj-rlfT9BBLRLAntDhw38DcG2-UzlgtMvXHPrJLO3PKQqaOKw0c_Zu90AwfzJmiff3fGicXY&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=65d12078055e63e59a21a1e5d3594dbee4298744..57a9&prompt=consent" for ::1 at 2020-01-08 23:05:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"a99fd1bc4b0231b70e7c313211e13c48062481e2c0c788f1", "code"=>"4/vAEX97dhNfl-wGMWj-rlfT9BBLRLAntDhw38DcG2-UzlgtMvXHPrJLO3PKQqaOKw0c_Zu90AwfzJmiff3fGicXY", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"65d12078055e63e59a21a1e5d3594dbee4298744..57a9", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms)
+
+
+  
+TypeError (exception class/object expected):
+  
+app/controllers/sessions_controller.rb:13:in `raise'
+app/controllers/sessions_controller.rb:13:in `create'
+Started GET "/auth/google_oauth2/callback?state=a99fd1bc4b0231b70e7c313211e13c48062481e2c0c788f1&code=4%2FvAHzIaklvw0mOokd1trORjHOl_jISjjNuemd2qn8-nbo-PKtzWAxl0AeRYgo9a2FhD5zyU7DnsP_X5uLpgkf5z8&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=8b7ee905cb3a1c334fb17a1c955c28e633be7a42..5d97&prompt=consent" for ::1 at 2020-01-08 23:05:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"a99fd1bc4b0231b70e7c313211e13c48062481e2c0c788f1", "code"=>"4/vAHzIaklvw0mOokd1trORjHOl_jISjjNuemd2qn8-nbo-PKtzWAxl0AeRYgo9a2FhD5zyU7DnsP_X5uLpgkf5z8", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"8b7ee905cb3a1c334fb17a1c955c28e633be7a42..5d97", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms)
+
+
+  
+RuntimeError (#<ActiveModel::Errors:0x00007fb0e0223c40 @base=#<User id: nil, email: nil, first_name: nil, password_digest: nil, created_at: nil, updated_at: nil, uid: "114396825748217958374">, @messages={:password=>["can't be blank"], :email=>["can't be blank", "is invalid"], :first_name=>["can't be blank"]}, @details={:password=>[{:error=>:blank}], :email=>[{:error=>:blank}, {:error=>:invalid, :value=>nil}], :first_name=>[{:error=>:blank}]}>):
+  
+app/controllers/sessions_controller.rb:13:in `create'
+Started GET "/auth/google_oauth2/callback?state=a99fd1bc4b0231b70e7c313211e13c48062481e2c0c788f1&code=4%2FvAFW_kV5lup3O18tx8qxwKai0SpblaLmud622vEHEMzJsprKP1Y8hVcc3rzj_NBDTj5cMoIg_TP2PsBeK22nQNE&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=d32539e8095ca5d95cf81717d0cec72efb8389d6..7599&prompt=consent" for ::1 at 2020-01-08 23:07:07 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"a99fd1bc4b0231b70e7c313211e13c48062481e2c0c788f1", "code"=>"4/vAFW_kV5lup3O18tx8qxwKai0SpblaLmud622vEHEMzJsprKP1Y8hVcc3rzj_NBDTj5cMoIg_TP2PsBeK22nQNE", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"d32539e8095ca5d95cf81717d0cec72efb8389d6..7599", "prompt"=>"consent"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.0ms)
+
+
+  
+RuntimeError (#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1578546433 refresh_token="1//0d0gbhni1OHE3CgYIARAAGA0SNwF-L9Ir2vnBJawBaAD6ym7_BxQaPmbrgDuP1bToa5AGQ6aSKQNwkJiiQOY3t0nYYuS0vYohM1g" token="ya29.Il-4B0j3fdRJKNdVVq0iipGBT79AZRu83YTsCZKdmCkM4KHFLmROvwACwE9TPlsKgY3rA-l8gu3binU6WLIzHqIEywmFn7eSIErzU6BT0twLutV_s8qCDdcQajvlJ4MyAw"> extra=#<OmniAuth::AuthHash id_info=#<OmniAuth::AuthHash at_hash="AcLxAMpooJvPuLE5My0K8Q" aud="605947402679-6ra81799bcupnis6h3g0h67u14622dn4.apps.googleusercontent.com" azp="605947402679-6ra81799bcupnis6h3g0h67u14622dn4.apps.googleusercontent.com" email="patriciaogen@gmail.com" email_verified=true exp=1578546433 family_name="Ogen" given_name="Patricia" iat=1578542833 iss="https://accounts.google.com" locale="en" name="Patricia Ogen" picture="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/s96-c/photo.jpg" sub="114396825748217958374"> id_token="eyJhbGciOiJSUzI1NiIsImtpZCI6ImNkMjM0OTg4ZTNhYWU2N2FmYmMwMmNiMWM0MTQwYjNjZjk2ODJjYWEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI2MDU5NDc0MDI2NzktNnJhODE3OTliY3VwbmlzNmgzZzBoNjd1MTQ2MjJkbjQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI2MDU5NDc0MDI2NzktNnJhODE3OTliY3VwbmlzNmgzZzBoNjd1MTQ2MjJkbjQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQzOTY4MjU3NDgyMTc5NTgzNzQiLCJlbWFpbCI6InBhdHJpY2lhb2dlbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IkFjTHhBTXBvb0p2UHVMRTVNeTBLOFEiLCJuYW1lIjoiUGF0cmljaWEgT2dlbiIsInBpY3R1cmUiOiJodHRwczovL2xoNS5nb29nbGV1c2VyY29udGVudC5jb20vLU4xQlJQcGpZVi1zL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FDSGkzcmVrVDBWckt4M01OWDZmZlRneXJnVWk1cEhDaHcvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IlBhdHJpY2lhIiwiZmFtaWx5X25hbWUiOiJPZ2VuIiwibG9jYWxlIjoiZW4iLCJpYXQiOjE1Nzg1NDI4MzMsImV4cCI6MTU3ODU0NjQzM30.W3xawfinwYp1b7G-HQXTv_NnqHU8XLgVJiOSwfVlzhqNQ-xnXnUp8QlhwPNIaJVF4OIuh6dzX7KJcHqGbYVhZQW0gnzWvTb9ov6d6h8b2WYxwSumg-Dshefu3r10hyRjgzBrHZp8acaZtizaiaFjiIwm9UGj2eGP0UN3tbgdRT9Ia3wzMbHLOeDBzz9KCoieKqiqmzTjv50-jWXYVhQwctbxDmYC8UVU2l2Wyl60tqPQy8SeIBJAPSG68IiT7C8WRJ592iMrvwwfkHZIue3gVPwJw_qKSs-j6_C128SxxRR_DiDHoqjQcD98_K-p53uMgl0-m1_PotJuzOB5zjg0qQ" raw_info=#<OmniAuth::AuthHash email="patriciaogen@gmail.com" email_verified=true family_name="Ogen" given_name="Patricia" locale="en" name="Patricia Ogen" picture="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/photo.jpg" sub="114396825748217958374">> info=#<OmniAuth::AuthHash::InfoHash email="patriciaogen@gmail.com" email_verified=true first_name="Patricia" image="https://lh5.googleusercontent.com/-N1BRPpjYV-s/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rekT0VrKx3MNX6ffTgyrgUi5pHChw/photo.jpg" last_name="Ogen" name="Patricia Ogen" unverified_email="patriciaogen@gmail.com"> provider="google_oauth2" uid="114396825748217958374">):
+  
+app/controllers/sessions_controller.rb:13:in `create'
+Started GET "/auth/google_oauth2/callback?state=a99fd1bc4b0231b70e7c313211e13c48062481e2c0c788f1&code=4%2FvAEfDUMy1KcGTx8UuZ6zWN2tUZb-iEX6Vv6R8n1T1_w4WptprCDGAAYsq3hgrNLbU5c28tqjq7pzXcw3lyxUsX0&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=a5ba4352536aabdb0fa6bfe9292f6224843dbe45..4c9e&prompt=consent" for ::1 at 2020-01-08 23:11:12 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"a99fd1bc4b0231b70e7c313211e13c48062481e2c0c788f1", "code"=>"4/vAEfDUMy1KcGTx8UuZ6zWN2tUZb-iEX6Vv6R8n1T1_w4WptprCDGAAYsq3hgrNLbU5c28tqjq7pzXcw3lyxUsX0", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"a5ba4352536aabdb0fa6bfe9292f6224843dbe45..4c9e", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms)
+
+
+  
+RuntimeError (#<ActiveModel::Errors:0x00007fb0e736e350 @base=#<User id: nil, email: "patriciaogen@gmail.com", first_name: "Patricia", password_digest: nil, created_at: nil, updated_at: nil, uid: "114396825748217958374">, @messages={:password=>["can't be blank"]}, @details={:password=>[{:error=>:blank}]}>):
+  
+app/controllers/sessions_controller.rb:13:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "new@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 23:20:59 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-08 23:20:59 -0500
+Started GET "/auth/google_oauth2/callback?state=482f8c6a49e0f87832af3408deaee346ce9c03d9c08af1cd&code=4%2FvAHxy9Ap1XXeaD0CmPhqYA6c4K7wVDUUpCDZ7Gv09xh5EI8ujmCpmB8eox-6dTrkwwLoEprrK_H0sz48c25bRq8&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=9f3937ddd0b6d02149a58ce94c8b04ee49125b85..9a37&prompt=consent" for ::1 at 2020-01-08 23:21:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"482f8c6a49e0f87832af3408deaee346ce9c03d9c08af1cd", "code"=>"4/vAHxy9Ap1XXeaD0CmPhqYA6c4K7wVDUUpCDZ7Gv09xh5EI8ujmCpmB8eox-6dTrkwwLoEprrK_H0sz48c25bRq8", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"9f3937ddd0b6d02149a58ce94c8b04ee49125b85..9a37", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms)
+
+
+  
+RuntimeError (#<ActiveModel::Errors:0x00007fb0e00e6468 @base=#<User id: nil, email: "patriciaogen@gmail.com", first_name: "Patricia", password_digest: nil, created_at: nil, updated_at: nil, uid: "114396825748217958374">, @messages={:password=>["can't be blank"]}, @details={:password=>[{:error=>:blank}]}>):
+  
+app/controllers/sessions_controller.rb:13:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Started GET "/auth/google_oauth2/callback?state=482f8c6a49e0f87832af3408deaee346ce9c03d9c08af1cd&code=4%2FvAFSGk6z1qvceHHmf1eZfoG6T8lleEMMUC8axnHGcSDHHHwlxsH_YOlfOXAs_x3BCWe8ZJ7nkN7nwgHhOyQdnxI&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=17a7e0b8e2503eb527d9f4865078cd60bfa9e800..ba07&prompt=consent" for ::1 at 2020-01-08 23:27:11 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"482f8c6a49e0f87832af3408deaee346ce9c03d9c08af1cd", "code"=>"4/vAFSGk6z1qvceHHmf1eZfoG6T8lleEMMUC8axnHGcSDHHHwlxsH_YOlfOXAs_x3BCWe8ZJ7nkN7nwgHhOyQdnxI", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"17a7e0b8e2503eb527d9f4865078cd60bfa9e800..ba07", "prompt"=>"consent"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.9ms)
+
+
+  
+RuntimeError (#<ActiveModel::Errors:0x00007fd5aac4d510 @base=#<User id: nil, email: "patriciaogen@gmail.com", first_name: "Patricia", password_digest: nil, created_at: nil, updated_at: nil, uid: "114396825748217958374">, @messages={:password=>["can't be blank"]}, @details={:password=>[{:error=>:blank}]}>):
+  
+app/controllers/sessions_controller.rb:13:in `create'

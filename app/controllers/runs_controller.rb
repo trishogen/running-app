@@ -45,7 +45,7 @@ class RunsController < ApplicationController
   def update
     @run = Run.find(params[:id])
     @run.update(run_params)
-    redirect_to user_run_path(@run)
+    redirect_to user_run_path(current_user, @run)
   end
 
   def destroy
