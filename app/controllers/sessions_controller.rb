@@ -8,9 +8,10 @@ class SessionsController < ApplicationController
     if auth
       @user = User.find_by(email: auth['info']['email'])
       if @user.nil?
-        @user = User.create(email: auth['info']['email'], uid: auth['uid'],
+        @user = User.new(email: auth['info']['email'], uid: auth['uid'],
           first_name: auth['info']['first_name'])
-          raise @user.errors.inspect
+        @user.save
+        raise @user.errors.inspect
       end
     else
       @user = User.find_by(email: params[:user][:email])

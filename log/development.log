@@ -9357,3 +9357,127 @@ Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.9ms)
 RuntimeError (#<ActiveModel::Errors:0x00007fd5aac4d510 @base=#<User id: nil, email: "patriciaogen@gmail.com", first_name: "Patricia", password_digest: nil, created_at: nil, updated_at: nil, uid: "114396825748217958374">, @messages={:password=>["can't be blank"]}, @details={:password=>[{:error=>:blank}]}>):
   
 app/controllers/sessions_controller.rb:13:in `create'
+Started GET "/" for ::1 at 2020-01-09 20:57:07 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 211ms (Views: 207.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-09 20:57:09 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-09 20:57:09 -0500
+Started GET "/auth/google_oauth2/callback?state=d15d1bfa39553c9b1dbf47a75429fff52dff25ba82b39436&code=4%2FvQFEZqj8Px3N8DJ6AhPUNQbt-ge4_ke8uYEGlHGmI6VvBn5Mnf5N-bWrjfZSlH4VRcWJRt-SHXXTo5DaZM-bAjc&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent&session_state=0983a54033bf76a3242c3266228c686c11aefb86..1b24" for ::1 at 2020-01-09 20:57:12 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"d15d1bfa39553c9b1dbf47a75429fff52dff25ba82b39436", "code"=>"4/vQFEZqj8Px3N8DJ6AhPUNQbt-ge4_ke8uYEGlHGmI6VvBn5Mnf5N-bWrjfZSlH4VRcWJRt-SHXXTo5DaZM-bAjc", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent", "session_state"=>"0983a54033bf76a3242c3266228c686c11aefb86..1b24"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:13
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:13
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms)
+
+
+  
+RuntimeError (#<ActiveModel::Errors:0x00007fea3a2c0f48 @base=#<User id: nil, email: "patriciaogen@gmail.com", first_name: "Patricia", password_digest: nil, created_at: nil, updated_at: nil, uid: "114396825748217958374">, @messages={:password=>["can't be blank"]}, @details={:password=>[{:error=>:blank}]}>):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started GET "/auth/google_oauth2/callback?state=d15d1bfa39553c9b1dbf47a75429fff52dff25ba82b39436&code=4%2FvQGgbOcUmj_sAbYuTraYNn6f6VLjc0LDxmEoKjJESFFYhqiujEktsi-USj7iadATfGieFRwjKHcAr8BK_aZwZi4&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent&session_state=e76d6165fbfad036a8d254f142f6eb3c8464bdb3..c960" for ::1 at 2020-01-09 20:58:08 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"d15d1bfa39553c9b1dbf47a75429fff52dff25ba82b39436", "code"=>"4/vQGgbOcUmj_sAbYuTraYNn6f6VLjc0LDxmEoKjJESFFYhqiujEktsi-USj7iadATfGieFRwjKHcAr8BK_aZwZi4", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent", "session_state"=>"e76d6165fbfad036a8d254f142f6eb3c8464bdb3..c960"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:13
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:13
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.9ms)
+
+
+  
+RuntimeError (#<ActiveModel::Errors:0x00007fea3a728428 @base=#<User id: nil, email: "patriciaogen@gmail.com", first_name: "Patricia", password_digest: nil, created_at: nil, updated_at: nil, uid: "114396825748217958374">, @messages={:password=>["can't be blank"]}, @details={:password=>[{:error=>:blank}]}>):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-09 20:58:15 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-09 20:58:15 -0500
+Started GET "/auth/google_oauth2/callback?state=c5e4c1c10bbbcb5491875bb32ea498a6bb8fa93cbb1f38d6&code=4%2FvQEwA_peYhDJwyP1ajLPLOgRJ_7RiKisVtjYA2QiLse8CXLPwi8rwFsUP4ASnGRUM4tQCM_InnEeEJhUzwdPcO4&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent&session_state=060446bf833df0926ec7ead7980f645cae634508..f82d" for ::1 at 2020-01-09 20:58:18 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"c5e4c1c10bbbcb5491875bb32ea498a6bb8fa93cbb1f38d6", "code"=>"4/vQEwA_peYhDJwyP1ajLPLOgRJ_7RiKisVtjYA2QiLse8CXLPwi8rwFsUP4ASnGRUM4tQCM_InnEeEJhUzwdPcO4", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent", "session_state"=>"060446bf833df0926ec7ead7980f645cae634508..f82d"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:13
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:13
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+RuntimeError (#<ActiveModel::Errors:0x00007fea337d6480 @base=#<User id: nil, email: "patriciaogen@gmail.com", first_name: "Patricia", password_digest: nil, created_at: nil, updated_at: nil, uid: "114396825748217958374">, @messages={:password=>["can't be blank"]}, @details={:password=>[{:error=>:blank}]}>):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started GET "/" for ::1 at 2020-01-09 21:01:06 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-09 21:01:07 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-01-09 21:01:08 -0500
+Started GET "/auth/google_oauth2/callback?state=69675e45aa875ad155612d0e3fe9c47ce0ea2514da1a0c5b&code=4%2FvQE_OidddbviLqlNNEq864QOM6pbvTqEkyHIacduSpiE_GPs7rzhvmNZcJQncYpk_ROCe5Urr6Hh7DPYzNpY0iA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent&session_state=f77ed2d96bb1154efa5fd65c43b9749dae65e0e4..ce66" for ::1 at 2020-01-09 21:01:10 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"69675e45aa875ad155612d0e3fe9c47ce0ea2514da1a0c5b", "code"=>"4/vQE_OidddbviLqlNNEq864QOM6pbvTqEkyHIacduSpiE_GPs7rzhvmNZcJQncYpk_ROCe5Urr6Hh7DPYzNpY0iA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent", "session_state"=>"f77ed2d96bb1154efa5fd65c43b9749dae65e0e4..ce66"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:13
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "created_at", "updated_at", "uid") VALUES (?, ?, ?, ?, ?)[0m  [["email", "patriciaogen@gmail.com"], ["first_name", "Patricia"], ["created_at", "2020-01-10 02:01:11.216987"], ["updated_at", "2020-01-10 02:01:11.216987"], ["uid", "114396825748217958374"]]
+  ↳ app/controllers/sessions_controller.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:13
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.0ms)
+
+
+  
+RuntimeError (#<ActiveModel::Errors:0x00007fea3492a718 @base=#<User id: 5, email: "patriciaogen@gmail.com", first_name: "Patricia", password_digest: nil, created_at: "2020-01-10 02:01:11", updated_at: "2020-01-10 02:01:11", uid: "114396825748217958374">, @messages={}, @details={}>):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started GET "/login" for ::1 at 2020-01-09 21:01:51 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 26ms (Views: 17.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2020-01-09 21:01:58 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-01-09 21:02:00 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X4rGB2wQgUU0ufC7j1p1D7/z9Qv5VgHAcXLvK097M2uEiEBeZnarwDc1p/9BiJQisGfUo1FN/nLPuuAlkOJwWA==", "user"=>{"email"=>"", "first_name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.2ms)
+
+
