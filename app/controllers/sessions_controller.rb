@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
         @user = User.new(email: auth['info']['email'], uid: auth['uid'],
           first_name: auth['info']['first_name'])
         @user.save
-        raise @user.errors.inspect
       end
     else
       @user = User.find_by(email: params[:user][:email])
