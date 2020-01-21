@@ -5,7 +5,7 @@ Elevation: <%= @route.elevation %> feet </br>
 Description: <%= @route.description %> </br>
 Running conditions: <%= @route.condition %> </br>
 
-<% if @user.has_been_on_route(@route) %>
+<% if current_user_been_on_route(@route) %>
  <%= link_to "Edit", edit_route_path(@route) %> |
  <%= link_to "Delete", @route, method: :delete, data: { confirm: "Really?" } %>
 <% end %>
