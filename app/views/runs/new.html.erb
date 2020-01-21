@@ -1,17 +1,3 @@
 <h1> Add a new run </h1>
 
-<% if @run.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      Please fix <%= pluralize(@run.errors.count, "error") %> to add a new run:
-    </h2>
-
-    <ul>
-    <% @run.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <%= render 'form' %>

@@ -1,23 +1,13 @@
 <h1> Sign up for Running Club </h1>
 
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      Please fix <%= pluralize(@user.errors.count, "error") %> to singup:
-    </h2>
-
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <%= form_for @user do |f| %>
-  Email: <%= f.text_field :email %> </br>
-  Name: <%= f.text_field :first_name %> </br>
-  Password: <%= f.password_field :password %> </br>
-  Password Confirmation: <%= f.password_field :password_confirmation %> </br>
+  Email: <%= f.text_field :email,
+    placeholder: @user.errors.full_messages_for(:email).first %> </br>
+  Name: <%= f.text_field :first_name,
+    placeholder: @user.errors.full_messages_for(:first_name).first %> </br>
+  Password: <%= f.password_field :password,
+    placeholder: @user.errors.full_messages_for(:password).first %> </br>
+  Password Confirmation: <%= f.password_field :password_confirmation,
+    placeholder: @user.errors.full_messages_for(:password_confirmation).first %> </br>
   <%= f.submit "Sign up" %>
 <% end %>
