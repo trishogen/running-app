@@ -11,5 +11,8 @@ class Run < ApplicationRecord
   validates :user_id, presence: true, numericality: { only_integer: true }
   validates :route_id, presence: true, numericality: { only_integer: true }
 
+  def self.total_run_time
+    total_run_time = self.sum("run_time")
+  end
 
 end

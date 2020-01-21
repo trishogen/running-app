@@ -14647,3 +14647,275 @@ Processing by RoutesController#show as HTML
 Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 0.4ms)
 
 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "SUM(age". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from rescue in irb_binding at (irb):5)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM(age FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+Started GET "/" for ::1 at 2020-01-20 22:57:34 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 220ms (Views: 204.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2020-01-20 22:57:39 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:6
+  Rendered runs/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 33ms (Views: 24.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 22:57:50 -0500
+Processing by RunsController#total_run_time as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `total_run_time' for #<Class:0x00007f88cbb589b0>
+Did you mean?  total_miles_run):
+  
+app/controllers/runs_controller.rb:64:in `total_run_time'
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 22:58:28 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 18ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 22:58:55 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:00:42 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:06:17 -0500
+Processing by RunsController#total_run_time as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/trishogen/workspace/running-app/app/models/run.rb:15: syntax error, unexpected ')'
+...time = self.sum(:run_time * 6-)
+...                              ^):
+  
+app/models/run.rb:15: syntax error, unexpected ')'
+app/controllers/runs_controller.rb:64:in `total_run_time'
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:06:27 -0500
+Processing by RunsController#total_run_time as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `*' for :run_time:Symbol):
+  
+app/models/run.rb:15:in `total_run_time'
+app/controllers/runs_controller.rb:64:in `total_run_time'
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:07:07 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM(run_time * 60) FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 11.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/runs/2" for ::1 at 2020-01-20 23:09:58 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:13
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (145.2ms)
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `run' for #<#<Class:0x00007f88cb78e668>:0x00007f88cb78ccc8>
+Did you mean?  @run):
+    1: <h1><%= @run.title %></h1>
+    2: Date run: <%= run_date @run %> </br>
+    3: Route: <%= @run.route.title %> </br>
+    4: Run Time: <%= format_run_time @run.run_time %> </br>
+    5: Mood: <%= @run.mood %> </br>
+    6: Notes: <%= @run.notes %> </br>
+    7: 
+  
+app/helpers/runs_helper.rb:13:in `format_run_time'
+app/views/runs/show.html.erb:4:in `_app_views_runs_show_html_erb___2338861126634553859_70112752989920'
+Started GET "/users/1/runs/2" for ::1 at 2020-01-20 23:10:23 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:13
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  Rendered runs/show.html.erb within layouts/application (180.1ms)
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `run' for #<#<Class:0x00007f88d3b99048>:0x00007f88d3bbac20>
+Did you mean?  @run):
+    1: <h1><%= @run.title %></h1>
+    2: Date run: <%= run_date @run %> </br>
+    3: Route: <%= @run.route.title %> </br>
+    4: Run Time: <%= format_run_time @run.run_time %> </br>
+    5: Mood: <%= @run.mood %> </br>
+    6: Notes: <%= @run.notes %> </br>
+    7: 
+  
+app/helpers/runs_helper.rb:13:in `format_run_time'
+app/views/runs/show.html.erb:4:in `_app_views_runs_show_html_erb___2338861126634553859_70112822218240'
+Started GET "/users/1/runs/2" for ::1 at 2020-01-20 23:10:45 -0500
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:13
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  [1m[36mRun Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/runs_helper.rb:18
+  Rendered runs/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 40ms (Views: 19.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2020-01-20 23:10:47 -0500
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:6
+  Rendered runs/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:10:52 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM(run_time * 60) FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:11:42 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:12:16 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:12:42 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:13:04 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:13:12 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:13:22 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:13:40 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:13:46 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/runs/total_run_time" for ::1 at 2020-01-20 23:14:15 -0500
+Processing by RunsController#total_run_time as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:15
+  Rendering runs/total_run_time.html.erb within layouts/application
+  Rendered runs/total_run_time.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.1ms)
+
+
