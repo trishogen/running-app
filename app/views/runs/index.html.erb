@@ -4,10 +4,11 @@
  <% end -%>
 
 <% @runs.each do |r| %>
-  <%= run_date(r) %> - 
+  <%= run_date(r) %> -
   <%= link_to r.title, user_run_path(@user, r) %> </br>
 <% end %>
 </br>
 
+<%= link_to 'See all users total running time!', runs_total_run_time_path %> </br>
 <%= link_to 'Add new run', new_user_run_path(@user) %> |
 <%= link_to 'Go back', root_path %>
