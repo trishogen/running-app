@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       end
     else
       @user = User.find_by(email: params[:user][:email])
-      return head(:forbidden) unless params[:password] == @user.password
+      return head(:forbidden) unless @user.authenticate(params[:user][:password])
     end
 
     session[:user_id] = @user.id
