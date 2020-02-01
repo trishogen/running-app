@@ -16,4 +16,12 @@ class User < ApplicationRecord
     self.uid != nil
   end
 
+  def been_on_run(run)
+    self.runs.include?(run)
+  end
+
+  def been_on_route(route)
+    self.routes.include?(route)
+  end
+
 end

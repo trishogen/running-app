@@ -71,4 +71,16 @@ class RunsController < ApplicationController
     params.require(:run).permit(:user_id, :route_id, :title, :mood, :run_time,
       :date, :notes)
   end
+
+
+  def forbid_if_user_hasnt_been_on_run(run) #controller
+    return head(:forbidden) unless current_user.been_on_run(run)
+  end
+
+  def redirect_if_user_hasnt_been_on_run(run) #controller
+    if @run == nil
+      flash[:alert] = 'Run not found'
+      redirect_to user_runs_path(current_user)
+    end
+  end
 end

@@ -5,7 +5,7 @@ Run Time: <%= format_run_time @run.run_time %> </br>
 Mood: <%= @run.mood %> </br>
 Notes: <%= @run.notes %> </br>
 
-<% if current_user_been_on_run(@run) %>
+<% if current_user.been_on_run(@run) %>
 <%= link_to "Edit", edit_user_run_path(@user, @run) %> |
 <%= link_to "Delete", [@user, @run], method: :delete, data: { confirm: "Really?" } %>
 <% end %>

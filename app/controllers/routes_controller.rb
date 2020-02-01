@@ -1,5 +1,4 @@
 class RoutesController < ApplicationController
-  include RoutesHelper
 
   before_action :require_login
 
@@ -57,6 +56,10 @@ class RoutesController < ApplicationController
   def route_params
     params.require(:route).permit(:title, :location, :distance, :elevation,
       :description, :condition)
+  end
+
+  def forbid_if_user_hasnt_been_on_route(route)
+    return head(:forbidden) unless current_user.been_on_route(route)
   end
 
 end
