@@ -3,7 +3,6 @@ Location: <%= @route.location %> </br>
 Distance: <%= @route.distance %> miles</br>
 Elevation: <%= @route.elevation %> feet </br>
 Description: <%= @route.description %> </br>
-Running conditions: <%= @route.condition %> </br>
 
 <% if current_user.been_on_route(@route) %>
  <%= link_to "Edit", edit_route_path(@route) %> |

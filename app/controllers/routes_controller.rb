@@ -34,9 +34,7 @@ class RoutesController < ApplicationController
 
     forbid_if_user_hasnt_been_on_route(@route)
 
-    @route.update(route_params)
-
-    if @route.save
+    if @route.update(route_params)
       redirect_to route_path(@route)
     else
       render :edit
@@ -55,7 +53,7 @@ class RoutesController < ApplicationController
 
   def route_params
     params.require(:route).permit(:title, :location, :distance, :elevation,
-      :description, :condition)
+      :description)
   end
 
   def forbid_if_user_hasnt_been_on_route(route)

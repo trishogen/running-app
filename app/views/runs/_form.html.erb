@@ -8,6 +8,7 @@
     placeholder: @run.errors.full_messages_for(:run_time).first %> </br>
   How did you feel? <%= f.text_field :mood,
     placeholder: @run.errors.full_messages_for(:mood).first %> </br>
+  How were the running conditions? <%= f.text_field :conditions %> </br>
   Anything to note? <%= f.text_field :notes %> </br>
   <%= f.submit "Submit" %>
 <% end %>

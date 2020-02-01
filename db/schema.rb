@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_022638) do
+ActiveRecord::Schema.define(version: 2020_02_01_021504) do
 
   create_table "routes", force: :cascade do |t|
     t.string "title"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2020_01_15_022638) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
-    t.string "condition"
   end
 
   create_table "runs", force: :cascade do |t|
@@ -33,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_01_15_022638) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
+    t.string "conditions"
   end
 
   create_table "users", force: :cascade do |t|

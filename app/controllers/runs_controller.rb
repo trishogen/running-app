@@ -45,7 +45,7 @@ class RunsController < ApplicationController
     @run = Run.find(params[:id])
     forbid_if_user_hasnt_been_on_run(@run)
 
-    if @run.save
+    if @run.update(run_params)
       redirect_to user_run_path(current_user, @run)
     else
       render :edit
@@ -69,7 +69,7 @@ class RunsController < ApplicationController
 
   def run_params
     params.require(:run).permit(:user_id, :route_id, :title, :mood, :run_time,
-      :date, :notes)
+      :date, :notes, :conditions)
   end
 
 
