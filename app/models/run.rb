@@ -2,6 +2,8 @@ class Run < ApplicationRecord
   belongs_to :user
   belongs_to :route
 
+  scope :total_run_time, -> {sum("run_time")}
+
   validates :title, presence: true
   validates :date, presence: true
   validates :run_time, presence: true, numericality: { greater_than_or_equal_to: 0.1}
@@ -10,9 +12,5 @@ class Run < ApplicationRecord
 
   validates :user_id, presence: true, numericality: { only_integer: true }
   validates :route_id, presence: true, numericality: { only_integer: true }
-
-  def self.total_run_time
-    total_run_time = self.sum("run_time")
-  end
 
 end
