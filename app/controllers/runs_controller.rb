@@ -1,30 +1,25 @@
 class RunsController < ApplicationController
   include RunsHelper
 
-  before_action :require_login
+  before_action :require_login, :set_user
+  before_action :set_all_routes, only: [:new, :create, :edit]
+  before_action :set_run, only: [:show, :edit, :update, :destroy]
+  before_action :forbid_if_user_hasnt_been_on_run, only: [:show, :edit, :update, :destroy]
+
 
   def index
-    @user = current_user
     @runs = @user.runs
   end
 
   def show
-    @user = current_user
-    @run = @user.runs.find_by(id: params[:id])
-
-    redirect_if_user_hasnt_been_on_run(@run)
   end
 
   def new
-    @user = current_user
-    @routes = Route.all
     @run = @user.runs.build
   end
 
   def create
-    @user = current_user
     @run = @user.runs.build(run_params)
-    @routes = Route.all
 
     if @run.save
       redirect_to user_run_path(@user, @run)
@@ -34,17 +29,9 @@ class RunsController < ApplicationController
   end
 
   def edit
-    @run = Run.find(params[:id])
-    @user = current_user
-    @routes = Route.all
-
-    forbid_if_user_hasnt_been_on_run(@run)
   end
 
   def update
-    @run = Run.find(params[:id])
-    forbid_if_user_hasnt_been_on_run(@run)
-
     if @run.update(run_params)
       redirect_to user_run_path(current_user, @run)
     else
@@ -53,9 +40,6 @@ class RunsController < ApplicationController
   end
 
   def destroy
-    @run = Run.find(params[:id])
-    forbid_if_user_hasnt_been_on_run(@run)
-
     @run.destroy
     redirect_to user_runs_path(current_user)
   end
@@ -72,15 +56,28 @@ class RunsController < ApplicationController
       :date, :notes, :conditions)
   end
 
-
-  def forbid_if_user_hasnt_been_on_run(run) #controller
-    return head(:forbidden) unless current_user.been_on_run(run)
+  def set_user
+    @user = current_user
   end
 
-  def redirect_if_user_hasnt_been_on_run(run) #controller
+  def set_all_routes
+    @routes = Route.all
+  end
+
+  def set_run
+    @run = Run.find_by(id: params[:id])
+    redirect_if_run_does_not_exist
+  end
+
+  def forbid_if_user_hasnt_been_on_run
+    return head(:forbidden) unless current_user.been_on_run(@run)
+  end
+
+  def redirect_if_run_does_not_exist
     if @run == nil
       flash[:alert] = 'Run not found'
-      redirect_to user_runs_path(current_user)
+      return redirect_to user_runs_path(current_user)
     end
   end
+
 end
