@@ -1,6 +1,9 @@
 class RoutesController < ApplicationController
 
   before_action :require_login
+  before_action :set_route, only: [:show, :edit, :update, :destroy]
+  before_action :forbid_if_user_hasnt_been_on_route, only: [:edit, :update, :destroy]
+
 
   def index
     @routes = Route.all
@@ -12,6 +15,7 @@ class RoutesController < ApplicationController
 
   def create
     @route = Route.new(route_params)
+    
     if @route.save
       redirect_to route_path(@route)
     else
@@ -21,19 +25,12 @@ class RoutesController < ApplicationController
 
   def show
     @user = current_user
-    @route = Route.find(params[:id])
   end
 
   def edit
-    @route = Route.find(params[:id])
-    forbid_if_user_hasnt_been_on_route(@route)
   end
 
   def update
-    @route = Route.find(params[:id])
-
-    forbid_if_user_hasnt_been_on_route(@route)
-
     if @route.update(route_params)
       redirect_to route_path(@route)
     else
@@ -42,9 +39,6 @@ class RoutesController < ApplicationController
   end
 
   def destroy
-    @route = Route.find(params[:id])
-    forbid_if_user_hasnt_been_on_route(@route)
-
     @route.destroy
     redirect_to routes_path
   end
@@ -56,8 +50,20 @@ class RoutesController < ApplicationController
       :description)
   end
 
+  def set_route
+    @route = Run.find_by(id: params[:id])
+    redirect_if_route_does_not_exist
+  end
+
+  def redirect_if_route_does_not_exist
+    if @route == nil
+      flash[:alert] = 'Route not found'
+      return redirect_to routes_path
+    end
+  end
+
   def forbid_if_user_hasnt_been_on_route(route)
-    return head(:forbidden) unless current_user.been_on_route(route)
+    return head(:forbidden) unless current_user.been_on_route(@route)
   end
 
 end
