@@ -4,7 +4,7 @@ Distance: <%= @route.distance %> miles</br>
 Elevation: <%= @route.elevation %> feet </br>
 Description: <%= @route.description %> </br>
 
-<% if current_user.been_on_route(@route) %>
+<% if @route.creator == current_user %>
  <%= link_to "Edit", edit_route_path(@route) %> |
  <%= link_to "Delete", @route, method: :delete, data: { confirm: "Really?" } %>
 <% end %>

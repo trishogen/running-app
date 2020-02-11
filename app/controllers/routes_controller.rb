@@ -2,7 +2,7 @@ class RoutesController < ApplicationController
 
   before_action :require_login
   before_action :set_route, only: [:show, :edit, :update, :destroy]
-  before_action :forbid_if_user_hasnt_been_on_route, only: [:edit, :update, :destroy]
+  before_action :forbid_if_not_creator, only: [:edit, :update, :destroy]
 
 
   def index
@@ -63,8 +63,8 @@ class RoutesController < ApplicationController
     end
   end
 
-  def forbid_if_user_hasnt_been_on_route(route)
-    return head(:forbidden) unless current_user.been_on_route(@route)
+  def forbid_if_not_creator
+    return head(:forbidden) unless @route.creator == current_user
   end
 
 end
