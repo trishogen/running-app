@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_secure_password validations: false
   has_many :runs
   has_many :routes, through: :runs
+  has_many :routes, foreign_key: :creator_id
+
 
   validates :email, uniqueness: true, presence: true, format: { with:
     /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}

@@ -15,7 +15,8 @@ class RoutesController < ApplicationController
 
   def create
     @route = Route.new(route_params)
-    
+    @route.creator = current_user
+
     if @route.save
       redirect_to route_path(@route)
     else
@@ -51,7 +52,7 @@ class RoutesController < ApplicationController
   end
 
   def set_route
-    @route = Run.find_by(id: params[:id])
+    @route = Route.find_by(id: params[:id])
     redirect_if_route_does_not_exist
   end
 
