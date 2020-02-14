@@ -44,11 +44,6 @@ class RunsController < ApplicationController
     redirect_to user_runs_path(current_user)
   end
 
-  def total_run_time
-    @total_time = Run.total_run_time
-  end
-
-
   private
 
   def run_params

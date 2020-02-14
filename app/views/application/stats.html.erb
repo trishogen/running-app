@@ -1,0 +1,10 @@
+<h1> Running App Stats </h1>
+
+<ul>
+<li> The user who has run the most miles is <%= @user_most_miles.first_name %></li>
+<li> Users have spent a total of <%= format_run_time @total_time %> running!</li>
+<li> The most popular route is  <%= @most_popular_route.title %></li>
+
+</ul>
+
+<%= link_to "Go Back", root_path %>

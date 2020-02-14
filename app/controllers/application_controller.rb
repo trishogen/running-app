@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
     @user = current_user
   end
 
+  def stats
+    @user_most_miles = User.most_miles_run
+    @total_time = Run.total_run_time
+    @most_popular_route = Route.most_popular_route
+  end
+
   private
 
   def require_login

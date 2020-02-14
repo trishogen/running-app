@@ -16,7 +16,9 @@ Rails.application.routes.draw do
 
   resources :routes
 
-  # Total run time scope method
 
   get '/runs/total_run_time', to: 'runs#total_run_time'
+
+  get 'stats', to: 'application#stats'
+
 end

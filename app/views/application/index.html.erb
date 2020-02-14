@@ -2,6 +2,8 @@
 <% if logged_in? %>
   <%= link_to 'View running routes', routes_path %> </br>
   <%= link_to 'My runs', user_runs_path(@user) %> </br>
+  <%= link_to 'Fun Stats', stats_path %> </br>
+
 
   <%= link_to "Log Out", logout_path, method: :delete, data: { confirm: "Really?" } %>
 

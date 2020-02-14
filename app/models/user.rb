@@ -4,6 +4,9 @@ class User < ApplicationRecord
   has_many :routes, through: :runs
   has_many :routes, foreign_key: :creator_id
 
+  scope :most_miles_run, -> { joins(runs: :route).group(:user_id).order(
+    Arel.sql('sum(routes.distance) desc')).limit(1).first }
+
 
   validates :email, uniqueness: true, presence: true, format: { with:
     /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}
@@ -22,8 +25,5 @@ class User < ApplicationRecord
     self.runs.include?(run)
   end
 
-  def been_on_route(route)
-    self.routes.include?(route)
-  end
 
 end
