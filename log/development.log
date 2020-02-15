@@ -20558,3 +20558,477 @@ Processing by ApplicationController#stats as HTML
 Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2020-02-13 22:25:47 -0500
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes" for ::1 at 2020-02-13 22:25:48 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/6" for ::1 at 2020-02-13 22:25:55 -0500
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:55
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/routes" for ::1 at 2020-02-13 22:25:56 -0500
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-13 22:25:57 -0500
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" WHERE (id = 1) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" WHERE (users.id = 5) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" WHERE (users.id = 5) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" WHERE (users.id = 5)[0m
+Started GET "/" for ::1 at 2020-02-14 10:31:27 -0500
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 18.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/stats" for ::1 at 2020-02-14 10:31:28 -0500
+Processing by ApplicationController#stats as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" INNER JOIN "routes" ON "routes"."id" = "runs"."route_id" GROUP BY "user_id" ORDER BY sum(routes.distance) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:5
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" INNER JOIN "runs" ON "runs"."route_id" = "routes"."id" GROUP BY "routes" ORDER BY count(routes.id) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/route.rb:13
+  Rendering application/stats.html.erb within layouts/application
+  Rendered application/stats.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 8.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/stats" for ::1 at 2020-02-14 10:31:33 -0500
+Processing by ApplicationController#stats as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" INNER JOIN "routes" ON "routes"."id" = "runs"."route_id" GROUP BY "user_id" ORDER BY sum(routes.distance) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:5
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" INNER JOIN "runs" ON "runs"."route_id" = "routes"."id" GROUP BY "routes" ORDER BY count(routes.id) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/route.rb:13
+  Rendering application/stats.html.erb within layouts/application
+  Rendered application/stats.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 8.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/stats" for ::1 at 2020-02-14 10:33:10 -0500
+Processing by ApplicationController#stats as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" INNER JOIN "routes" ON "routes"."id" = "runs"."route_id" GROUP BY "users"."id" ORDER BY sum(routes.distance) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:5
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" INNER JOIN "runs" ON "runs"."route_id" = "routes"."id" GROUP BY "routes" ORDER BY count(routes.id) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/route.rb:13
+  Rendering application/stats.html.erb within layouts/application
+  Rendered application/stats.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 9.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/stats" for ::1 at 2020-02-14 10:33:14 -0500
+Processing by ApplicationController#stats as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" INNER JOIN "routes" ON "routes"."id" = "runs"."route_id" GROUP BY "users"."id" ORDER BY sum(routes.distance) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:5
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" INNER JOIN "runs" ON "runs"."route_id" = "routes"."id" GROUP BY "routes" ORDER BY count(routes.id) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/route.rb:13
+  Rendering application/stats.html.erb within layouts/application
+  Rendered application/stats.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/stats" for ::1 at 2020-02-14 10:33:15 -0500
+Processing by ApplicationController#stats as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" INNER JOIN "routes" ON "routes"."id" = "runs"."route_id" GROUP BY "users"."id" ORDER BY sum(routes.distance) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:5
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" INNER JOIN "runs" ON "runs"."route_id" = "routes"."id" GROUP BY "routes" ORDER BY count(routes.id) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/route.rb:13
+  Rendering application/stats.html.erb within layouts/application
+  Rendered application/stats.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stats" for ::1 at 2020-02-14 10:33:15 -0500
+Processing by ApplicationController#stats as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" INNER JOIN "routes" ON "routes"."id" = "runs"."route_id" GROUP BY "users"."id" ORDER BY sum(routes.distance) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:5
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" INNER JOIN "runs" ON "runs"."route_id" = "routes"."id" GROUP BY "routes" ORDER BY count(routes.id) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/route.rb:13
+  Rendering application/stats.html.erb within layouts/application
+  Rendered application/stats.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stats" for ::1 at 2020-02-14 10:33:15 -0500
+Processing by ApplicationController#stats as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" INNER JOIN "routes" ON "routes"."id" = "runs"."route_id" GROUP BY "users"."id" ORDER BY sum(routes.distance) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:5
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" INNER JOIN "runs" ON "runs"."route_id" = "routes"."id" GROUP BY "routes" ORDER BY count(routes.id) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/route.rb:13
+  Rendering application/stats.html.erb within layouts/application
+  Rendered application/stats.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stats" for ::1 at 2020-02-14 10:33:16 -0500
+Processing by ApplicationController#stats as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" INNER JOIN "routes" ON "routes"."id" = "runs"."route_id" GROUP BY "users"."id" ORDER BY sum(routes.distance) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:5
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" INNER JOIN "runs" ON "runs"."route_id" = "routes"."id" GROUP BY "routes" ORDER BY count(routes.id) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/route.rb:13
+  Rendering application/stats.html.erb within layouts/application
+  Rendered application/stats.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stats" for ::1 at 2020-02-14 10:33:26 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#stats as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "runs" ON "runs"."user_id" = "users"."id" INNER JOIN "routes" ON "routes"."id" = "runs"."route_id" GROUP BY "users"."id" ORDER BY sum(routes.distance) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("runs"."run_time") FROM "runs"[0m
+  ↳ app/models/run.rb:5
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" INNER JOIN "runs" ON "runs"."route_id" = "routes"."id" GROUP BY "routes" ORDER BY count(routes.id) desc LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/route.rb:13
+  Rendering application/stats.html.erb within layouts/application
+  Rendered application/stats.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 201ms (Views: 175.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 11:00:49 -0500
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for ::1 at 2020-02-14 11:00:51 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Yps205zXXUO+ELrr+ohktUYSDzUJ/3mOLU/Yo24KjlPEYlfhCHweZ726iQ6AbCPuIp+mR40LoLfoUJcy1tLXQQ=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-02-14 11:00:51 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 11:01:07 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to CreateCategories (20200214161627)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200214161627_create_categories.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200214161627_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200214161627"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to AddCategoryToRun (20200214161721)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "runs" ADD "category_id" integer[0m
+  ↳ db/migrate/20200214161721_add_category_to_run.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200214161721"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Started GET "/login" for ::1 at 2020-02-14 11:27:52 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 194ms (Views: 182.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/google_oauth2" for ::1 at 2020-02-14 11:27:54 -0500
+Started GET "/auth/google_oauth2" for ::1 at 2020-02-14 11:27:54 -0500
+Started GET "/auth/google_oauth2/callback?state=e8c70301f717b5cd2d51cc790829c688e655048170b995a9&code=4%2FwgEcWA3irQdqsFwT5-qn4Vibb0QvoPCCk2GSIAQvYNEtMXrFIHErG5T6OIz7WwH7VvaFHvDQBUveLwCM4B5r9Nk&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent&session_state=096c14e8e2d6dbbf0a8aaef980ef5c70f58feea1..6bb9" for ::1 at 2020-02-14 11:27:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"e8c70301f717b5cd2d51cc790829c688e655048170b995a9", "code"=>"4/wgEcWA3irQdqsFwT5-qn4Vibb0QvoPCCk2GSIAQvYNEtMXrFIHErG5T6OIz7WwH7VvaFHvDQBUveLwCM4B5r9Nk", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent", "session_state"=>"096c14e8e2d6dbbf0a8aaef980ef5c70f58feea1..6bb9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "patriciaogen@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-14 11:27:57 -0500
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-02-14 11:28:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/categories/new"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/category/new" for ::1 at 2020-02-14 11:28:20 -0500
+  
+ActionController::RoutingError (uninitialized constant CategoryController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/categories/new" for ::1 at 2020-02-14 11:28:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (102.5ms)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `categories_path' for #<#<Class:0x00007febc6c32ee0>:0x00007febc6c30a00>
+Did you mean?  category_path):
+    1: <%=form_for @category do |f| %>
+    2:   Name: <%= f.text_field :name %> </br>
+    3:   <%= f.submit %>
+    4: 
+  
+app/views/categories/new.html.erb:1:in `_app_views_categories_new_html_erb__3001918282992254248_70325314362820'
+Started GET "/categories/new" for ::1 at 2020-02-14 11:29:52 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 226ms (Views: 215.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/categories" for ::1 at 2020-02-14 11:31:39 -0500
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p1OkhRd/ilj+7xol2ujAqtzqWtVE0rEXX5+ZO2cxXe0BqsW3g9TJfP1FKcCgDIfxuGfzp8AmaC6agNaq3+kE/w==", "category"=>{"name"=>"new_cat"}, "commit"=>"Create Category"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:9
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "new_cat"], ["created_at", "2020-02-14 16:31:39.519096"], ["updated_at", "2020-02-14 16:31:39.519096"]]
+  ↳ app/controllers/categories_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:9
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 10ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-02-14 11:31:39 -0500
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-02-14 11:33:01 -0500
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:14
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to AddCategoryToRun (20200214161721)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aruns" ("id" integer NOT NULL PRIMARY KEY, "date" datetime DEFAULT NULL, "run_time" float DEFAULT NULL, "mood" varchar DEFAULT NULL, "notes" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "route_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "title" varchar DEFAULT NULL, "conditions" varchar DEFAULT NULL, "category_id" integer DEFAULT NULL)[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "aruns" ("id","date","run_time","mood","notes","user_id","route_id","created_at","updated_at","title","conditions","category_id")
+                     SELECT "id","date","run_time","mood","notes","user_id","route_id","created_at","updated_at","title","conditions","category_id" FROM "runs"[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "runs"[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "runs" ("id" integer NOT NULL PRIMARY KEY, "date" datetime DEFAULT NULL, "run_time" float DEFAULT NULL, "mood" varchar DEFAULT NULL, "notes" varchar DEFAULT NULL, "user_id" integer DEFAULT NULL, "route_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "title" varchar DEFAULT NULL, "conditions" varchar DEFAULT NULL)[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "runs" ("id","date","run_time","mood","notes","user_id","route_id","created_at","updated_at","title","conditions")
+                     SELECT "id","date","run_time","mood","notes","user_id","route_id","created_at","updated_at","title","conditions" FROM "aruns"[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aruns"[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200214161721"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+Migrating to CreateCategories (20200214161627)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200214161627"]]
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/bin/rake:23

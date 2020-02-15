@@ -2,7 +2,7 @@ class Run < ApplicationRecord
   belongs_to :user
   belongs_to :route
 
-  scope :total_run_time, -> {sum("run_time")}
+  scope :total_run_time, -> { sum(:run_time) }
 
   validates :title, presence: true
   validates :date, presence: true
