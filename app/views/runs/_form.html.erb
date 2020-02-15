@@ -1,0 +1,14 @@
+<%= form_for ([@user, @run]) do |f| %>
+  <%= f.hidden_field :user_id %>
+  Give this run a name <%= f.text_field :title,
+    placeholder: @run.errors.full_messages_for(:title).first %> </br>
+  When was your run? <%= f.date_select :date %> </br>
+  What route did you run? <%= f.collection_select :route_id, @routes, :id, :title %> </br>
+  How long did you run for? (in minutes) <%= f.number_field :run_time, step: :any,
+    placeholder: @run.errors.full_messages_for(:run_time).first %> </br>
+  How did you feel? <%= f.text_field :mood,
+    placeholder: @run.errors.full_messages_for(:mood).first %> </br>
+  How were the running conditions? <%= f.text_field :conditions %> </br>
+  Anything to note? <%= f.text_field :notes %> </br>
+  <%= f.submit "Submit" %>
+<% end %>

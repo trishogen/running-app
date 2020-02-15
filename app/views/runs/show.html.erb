@@ -1,0 +1,17 @@
+<h1><%= @run.title %></h1>
+Date run: <%= run_date @run %> </br>
+Route: <%= @run.route.title %> </br>
+Run Time: <%= format_run_time @run.run_time %> </br>
+Mood: <%= @run.mood %> </br>
+Conditions: <%= @run.conditions %> </br>
+Notes: <%= @run.notes %> </br>
+
+
+<% if current_user.been_on_run(@run) %>
+<%= link_to "Edit", edit_user_run_path(@user, @run) %> |
+<%= link_to "Delete", [@user, @run], method: :delete, data: { confirm: "Really?" } %>
+<% end %>
+
+</br>
+</br>
+<%= link_to "See all my runs", user_runs_path(@user) %>

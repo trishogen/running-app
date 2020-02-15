@@ -1,0 +1,17 @@
+<h1> Welcome to Running Club! </h1>
+<% if logged_in? %>
+  <%= link_to 'View running routes', routes_path %> </br>
+  <%= link_to 'My runs', user_runs_path(@user) %> </br>
+  <%= link_to 'Fun Stats', stats_path %> </br>
+
+
+  <%= link_to "Log Out", logout_path, method: :delete, data: { confirm: "Really?" } %>
+
+<% else %>
+
+  <%= link_to 'Signup', new_user_path %> </br>
+  <%= link_to 'Log in', login_path %> </br>
+  <%= link_to('Log in with Google!', '/auth/google_oauth2') %>
+
+
+<% end %>

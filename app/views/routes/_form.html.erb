@@ -1,0 +1,13 @@
+<%= form_for @route do |f| %>
+  Title: <%= f.text_field :title,
+    placeholder: @route.errors.full_messages_for(:title).first %> </br>
+  Location: <%= f.text_field :location,
+    placeholder: @route.errors.full_messages_for(:location).first %> </br>
+  Distance (miles): <%= f.number_field :distance,
+    placeholder: @route.errors.full_messages_for(:distance).first %> </br>
+  Elevation (feet): <%= f.number_field :elevation,
+    placeholder: @route.errors.full_messages_for(:elevation).first %> </br>
+  Description: <%= f.text_field :description,
+    placeholder: @route.errors.full_messages_for(:description).first %> </br>
+  <%= f.submit "Submit" %>
+<% end %>

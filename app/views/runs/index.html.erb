@@ -1,0 +1,13 @@
+<h1>My Runs</h1>
+<% flash.each do |name, msg| -%>
+   <%= content_tag :div, msg, class: name %>
+ <% end -%>
+
+<% @runs.each do |r| %>
+  <%= run_date(r) %> -
+  <%= link_to r.title, user_run_path(@user, r) %> </br>
+<% end %>
+</br>
+
+<%= link_to 'Add new run', new_user_run_path(@user) %> |
+<%= link_to 'Go back', root_path %>
