@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
       end
     else
       @user = User.find_by(email: params[:user][:email])
+
       return head(:forbidden) unless @user.authenticate(params[:user][:password])
     end
 
@@ -22,7 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :user_id if session[:user_id]
+    session.delete :user_id if session[:user_id]     # logout
     redirect_to login_path
   end
 

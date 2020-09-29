@@ -2,6 +2,7 @@ class Run < ApplicationRecord
   belongs_to :user
   belongs_to :route
 
+  # total time spent running, for stats page
   scope :total_run_time, -> { sum(:run_time) }
 
   validates :title, presence: true

@@ -21,11 +21,7 @@ class RunsController < ApplicationController
   def create
     @run = @user.runs.build(run_params)
 
-    if @run.save
-      redirect_to user_run_path(@user, @run)
-    else
-      render :new
-    end
+    @run.save ? (redirect_to user_run_path(@user, @run)) : (render :new)
   end
 
   def edit
@@ -60,16 +56,20 @@ class RunsController < ApplicationController
   end
 
   def set_run
+    # helper to find a given run by id param of page accessed
     @run = Run.find_by(id: params[:id])
     redirect_if_run_does_not_exist
   end
 
   def forbid_if_user_hasnt_been_on_run
+    # runs before each action except new/create to check that this user is
+    # authorized to access this run
     return head(:forbidden) unless current_user.been_on_run(@run)
   end
 
   def redirect_if_run_does_not_exist
-    if @run == nil
+    # check if someone is trying to access a page that doesn't exist & redirect
+    if @run.nil?
       flash[:alert] = 'Run not found'
       return redirect_to user_runs_path(current_user)
     end

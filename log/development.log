@@ -21041,3 +21041,320 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 200ms (Views: 195.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/login" for ::1 at 2020-09-29 19:24:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 202ms (Views: 182.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for ::1 at 2020-09-29 19:24:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CPh7LbYJsKYxgC3nNM+4HkaFA39RZYXk3paEpXxdTOQ5AKF58HdAMbDv/qZtl0ZhQm8WzF6rVkvjmlQQ97bdqg==", "user"=>{"email"=>"trish@trish.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@trish.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:16
+Redirected to http://localhost:3000/
+Completed 302 Found in 197ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-09-29 19:24:27 -0400
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for ::1 at 2020-09-29 19:24:31 -0400
+  
+SyntaxError (/Users/trishogen/workspace/running-app/app/controllers/routes_controller.rb:20: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+...e.save ? redirect_to route_path(@route) : render :new
+...                     ^~~~~~~~~~
+/Users/trishogen/workspace/running-app/app/controllers/routes_controller.rb:20: syntax error, unexpected ':', expecting end
+...edirect_to route_path(@route) : render :new
+...                              ^):
+  
+app/controllers/routes_controller.rb:20: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/controllers/routes_controller.rb:20: syntax error, unexpected ':', expecting end
+Started GET "/routes" for ::1 at 2020-09-29 19:24:48 -0400
+  
+SyntaxError (/Users/trishogen/workspace/running-app/app/controllers/routes_controller.rb:20: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+....save) ? redirect_to route_path(@route) : render :new
+...                     ^~~~~~~~~~
+/Users/trishogen/workspace/running-app/app/controllers/routes_controller.rb:20: syntax error, unexpected ':', expecting end
+...edirect_to route_path(@route) : render :new
+...                              ^):
+  
+app/controllers/routes_controller.rb:20: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/controllers/routes_controller.rb:20: syntax error, unexpected ':', expecting end
+Started GET "/routes" for ::1 at 2020-09-29 19:26:07 -0400
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 26ms (Views: 14.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes" for ::1 at 2020-09-29 19:26:15 -0400
+  
+SyntaxError (/Users/trishogen/workspace/running-app/app/controllers/routes_controller.rb:20: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+...e.save ? redirect_to route_path(@route) : (render :new)
+...                     ^~~~~~~~~~
+/Users/trishogen/workspace/running-app/app/controllers/routes_controller.rb:20: syntax error, unexpected ':', expecting end
+...edirect_to route_path(@route) : (render :new)
+...                              ^):
+  
+app/controllers/routes_controller.rb:20: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/controllers/routes_controller.rb:20: syntax error, unexpected ':', expecting end
+Started GET "/routes" for ::1 at 2020-09-29 19:26:24 -0400
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/5" for ::1 at 2020-09-29 19:28:02 -0400
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 49ms (Views: 32.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/routes/700" for ::1 at 2020-09-29 19:28:06 -0400
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"700"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 700], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:51
+Redirected to http://localhost:3000/routes
+Filter chain halted as :set_route rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for ::1 at 2020-09-29 19:28:06 -0400
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/4" for ::1 at 2020-09-29 19:28:27 -0400
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/600" for ::1 at 2020-09-29 19:28:31 -0400
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"600"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 600], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:51
+Redirected to http://localhost:3000/routes
+Filter chain halted as :set_route rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for ::1 at 2020-09-29 19:28:31 -0400
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes/5" for ::1 at 2020-09-29 19:28:59 -0400
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 25ms (Views: 7.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/routes/5000" for ::1 at 2020-09-29 19:29:02 -0400
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"5000"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 5000], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:51
+Redirected to http://localhost:3000/routes
+Filter chain halted as :set_route rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/routes" for ::1 at 2020-09-29 19:29:02 -0400
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/3" for ::1 at 2020-09-29 19:29:47 -0400
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 40ms (Views: 7.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/routes" for ::1 at 2020-09-29 19:29:48 -0400
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:2
+  Rendered routes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-09-29 19:29:49 -0400
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2020-09-29 19:29:50 -0400
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:6
+  Rendered runs/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 42ms (Views: 24.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1/runs/new" for ::1 at 2020-09-29 19:29:52 -0400
+Processing by RunsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:6
+  Rendered runs/_form.html.erb (21.9ms)
+  Rendered runs/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/runs/2" for ::1 at 2020-09-29 19:30:31 -0400
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:59
+  [1m[36mRun Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:24
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  [1m[36mCACHE Run Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:24
+  Rendered runs/show.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 53ms (Views: 33.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1/runs/5000" for ::1 at 2020-09-29 19:30:34 -0400
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"5000"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 5000], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:59
+Redirected to http://localhost:3000/users/1/runs
+Filter chain halted as :set_run rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2020-09-29 19:30:34 -0400
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.2ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:6
+  Rendered runs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-09-29 19:32:12 -0400
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 7.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes" for ::1 at 2020-09-29 19:32:13 -0400
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:6
+  Rendered routes/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/routes/3" for ::1 at 2020-09-29 19:32:14 -0400
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering routes/show.html.erb within layouts/application
+  Rendered routes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/60000" for ::1 at 2020-09-29 19:32:17 -0400
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"60000"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 60000], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:51
+Redirected to http://localhost:3000/routes
+Filter chain halted as :set_route rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/routes" for ::1 at 2020-09-29 19:32:17 -0400
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/routes/index.html.erb:6
+  Rendered routes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms)
+
+

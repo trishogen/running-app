@@ -9,6 +9,7 @@ class Route < ApplicationRecord
   validates :elevation, presence: true, numericality: { only_integer: true }
   validates :description, presence: true
 
+  # routes with the most runs, for stats page
   scope :most_popular_route, -> { Route.joins(:runs).group(:routes).order(
     Arel.sql('count(routes.id) desc')).first}
 end
