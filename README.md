@@ -30,7 +30,6 @@ this can be configured) using `-p` and `-b` switches.
 ## Future Improvements
 * Make it pretty (add CSS and photos)
 * Build out test suite
-* Add seed data
 * Add to the stats page using class scope methods
 * Add to option to add upload photos
 * Potentially other OmniAuth options (currently using only Google)

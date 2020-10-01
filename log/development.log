@@ -21358,3 +21358,378 @@ Processing by RoutesController#index as HTML
 Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms)
 
 
+  [1m[36mRoute Load (1.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+Started GET "/" for ::1 at 2020-10-01 19:25:03 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trishogen/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 220ms (Views: 203.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/runs" for ::1 at 2020-10-01 19:25:06 -0400
+Processing by RunsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/index.html.erb within layouts/application
+  [1m[36mRun Load (0.6ms)[0m  [1m[34mSELECT "runs".* FROM "runs" WHERE "runs"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/runs/index.html.erb:6
+  Rendered runs/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 39ms (Views: 23.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1/runs/new" for ::1 at 2020-10-01 19:25:08 -0400
+Processing by RunsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:6
+  Rendered runs/_form.html.erb (18.5ms)
+  Rendered runs/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 36ms (Views: 28.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/1/runs" for ::1 at 2020-10-01 19:25:17 -0400
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EQuxooKUg82u4pYI5wRfKHa1xVEEu28ZLZpL9Ui867RUb7DrtRVUIBpl2u7ZBZLM56BLg8oumA8Sfc6EKNY6EA==", "run"=>{"user_id"=>"1", "title"=>"", "date(1i)"=>"2021", "date(2i)"=>"11", "date(3i)"=>"6", "route_id"=>"3", "run_time"=>"", "mood"=>"", "conditions"=>"", "notes"=>""}, "commit"=>"Submit", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:24
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/runs_controller.rb:24
+  Rendering runs/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/runs/_form.html.erb:6
+  Rendered runs/_form.html.erb (3.0ms)
+  Rendered runs/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 19ms (Views: 11.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/1/runs" for ::1 at 2020-10-01 19:25:50 -0400
+Processing by RunsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8MrNbMduvw7VhC0JcbZVJNMoES8+fCzcq6aSIvJ250SesT97SXv7mSPb9KPoiLVgeMnBNe7wb8sCJasieLgr+Q==", "run"=>{"user_id"=>"1", "title"=>"test", "date(1i)"=>"2021", "date(2i)"=>"11", "date(3i)"=>"6", "route_id"=>"3", "run_time"=>"30", "mood"=>"test", "conditions"=>"test", "notes"=>"test"}, "commit"=>"Submit", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/runs_controller.rb:24
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:24
+  [1m[36mRun Create (0.4ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "notes", "user_id", "route_id", "created_at", "updated_at", "title", "conditions") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2021-11-06 00:00:00"], ["run_time", 30.0], ["mood", "test"], ["notes", "test"], ["user_id", 1], ["route_id", 3], ["created_at", "2020-10-01 23:25:50.522803"], ["updated_at", "2020-10-01 23:25:50.522803"], ["title", "test"], ["conditions", "test"]]
+  ↳ app/controllers/runs_controller.rb:24
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/runs_controller.rb:24
+Redirected to http://localhost:3000/users/1/runs/11
+Completed 302 Found in 9ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/runs/11" for ::1 at 2020-10-01 19:25:50 -0400
+Processing by RunsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/runs_controller.rb:60
+  [1m[36mRun Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  Rendering runs/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/runs/show.html.erb:3
+  [1m[36mCACHE Run Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  Rendered runs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "seed_user@seed_user.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "West Side Highway"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "seed_user@seed_user.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "West Side Highway"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "seedy"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."dirst_name" = ? LIMIT ?[0m  [["dirst_name", "seedy"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "seedy"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "trish"], ["LIMIT", 11]]
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "seed_user@seed_user.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "seed_user@aol.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "seed_user@aol.com"], ["first_name", "seedy"], ["password_digest", "$2a$12$XePUfnx/JfkjVj3UgHi8g.aIHS8J8OJpiXaNgvMipk1WoKpFcQHoC"], ["created_at", "2020-10-01 23:36:47.184900"], ["updated_at", "2020-10-01 23:36:47.184900"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."firs_name" = ? LIMIT ?[0m  [["firs_name", "seedy"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "seedy"], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "seed_user@aol.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "seed_user@aol.com"], ["first_name", "seedy"], ["password_digest", "$2a$12$0D4Ksz1S06xNdvhvbfdsd.CHzZoOibq0kinbs2de3hqDa6QpDlLI2"], ["created_at", "2020-10-01 23:37:53.967192"], ["updated_at", "2020-10-01 23:37:53.967192"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "West Side Highway"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateUsers (20191211012218)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "first_name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20191211012218_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191211012218"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateRoutes (20191211013443)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "routes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "location" varchar, "distance" float, "elevation" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20191211013443_create_routes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191211013443"]]
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateRuns (20191211014054)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "runs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime, "run_time" float, "mood" varchar, "notes" varchar, "user_id" integer, "route_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20191211014054_create_runs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191211014054"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddDescriptionToRoutes (20191221211204)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "routes" ADD "description" varchar[0m
+  ↳ db/migrate/20191221211204_add_description_to_routes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191221211204"]]
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddTitleToRuns (20200103011534)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "runs" ADD "title" varchar[0m
+  ↳ db/migrate/20200103011534_add_title_to_runs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200103011534"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddUidToUsers (20200109025545)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  ↳ db/migrate/20200109025545_add_uid_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200109025545"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddConditionToRoutes (20200115022638)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "routes" ADD "condition" varchar[0m
+  ↳ db/migrate/20200115022638_add_condition_to_routes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200115022638"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to RemoveConditionFromRoutes (20200201021147)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aroutes" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "distance" float DEFAULT NULL, "elevation" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description" varchar DEFAULT NULL, "condition" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20200201021147_remove_condition_from_routes.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aroutes" ("id","title","location","distance","elevation","created_at","updated_at","description","condition")
+                     SELECT "id","title","location","distance","elevation","created_at","updated_at","description","condition" FROM "routes"[0m
+  ↳ db/migrate/20200201021147_remove_condition_from_routes.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "routes"[0m
+  ↳ db/migrate/20200201021147_remove_condition_from_routes.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "routes" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "distance" float DEFAULT NULL, "elevation" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20200201021147_remove_condition_from_routes.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("id","title","location","distance","elevation","created_at","updated_at","description")
+                     SELECT "id","title","location","distance","elevation","created_at","updated_at","description" FROM "aroutes"[0m
+  ↳ db/migrate/20200201021147_remove_condition_from_routes.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aroutes"[0m
+  ↳ db/migrate/20200201021147_remove_condition_from_routes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200201021147"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddConditionsToRuns (20200201021504)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "runs" ADD "conditions" varchar[0m
+  ↳ db/migrate/20200201021504_add_conditions_to_runs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200201021504"]]
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddCreatorToRoute (20200211034434)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "routes" ADD "creator_id" integer[0m
+  ↳ db/migrate/20200211034434_add_creator_to_route.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_routes_on_creator_id" ON "routes" ("creator_id")[0m
+  ↳ db/migrate/20200211034434_add_creator_to_route.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200211034434"]]
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-01 23:40:33.774709"], ["updated_at", "2020-10-01 23:40:33.774709"]]
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "seed_user@aol.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "seed_user@aol.com"], ["first_name", "seedy"], ["password_digest", "$2a$12$sGhwNE6DQAZJoiLOUtGLUu/a7tKqg7tYFaixjSv/Uf1eU3WjtwmLC"], ["created_at", "2020-10-01 23:40:41.285986"], ["updated_at", "2020-10-01 23:40:41.285986"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park Loop"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mRoute Create (0.2ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park Loop"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 500], ["created_at", "2020-10-01 23:40:41.299454"], ["updated_at", "2020-10-01 23:40:41.299454"], ["description", "Easy loop around prospect park"], ["creator_id", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "West Side Highway"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mRoute Create (0.2ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "West Side Highway"], ["location", "Manhattan"], ["distance", 5.0], ["elevation", 450], ["created_at", "2020-10-01 23:40:41.302201"], ["updated_at", "2020-10-01 23:40:41.302201"], ["description", "Scenic route along the highway"], ["creator_id", 1]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[36mRun Create (0.3ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2021-09-27 00:00:00"], ["run_time", 17.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-01 23:40:41.314351"], ["updated_at", "2020-10-01 23:40:41.314351"], ["title", "Sunday Morning Run"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mRun Create (0.2ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2021-10-01 00:00:00"], ["run_time", 32.0], ["mood", "great"], ["user_id", 1], ["route_id", 2], ["created_at", "2020-10-01 23:40:41.316816"], ["updated_at", "2020-10-01 23:40:41.316816"], ["title", "Thursday Night Jog"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRun Load (0.3ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" LIMIT ?[0m  [["LIMIT", 11]]
