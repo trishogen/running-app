@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  text-align: center;
+  /* The image used */
+}
+
+html {
+  background-image: url("trail.jpg");
+
+  /* Full height */
+  min-height: 100px;
+
+  /* Center and scale the image nicely */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+ul {
+  text-align: center;
+  list-style-position: inside;
+}
+
+.alert {
+  padding: 10px;
+  background-color: #e07c75; /* Light Red */
+  color: white;
+  margin-bottom: 15px;
+}
