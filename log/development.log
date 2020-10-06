@@ -22753,3 +22753,17 @@ Processing by RoutesController#index as HTML
 Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/routes/1" for ::1 at 2020-10-01 20:37:18 -0400
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/routes_controller.rb:52
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering routes/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/routes/show.html.erb:7
+  Rendered routes/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
