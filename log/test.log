@@ -661,3 +661,519 @@
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mRun Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$IT/wWZ0Oqzsz.YL0H3qYUuHL/Pca8UCDqCVs2cvONy0m7Kml0HAF."], ["created_at", "2020-10-07 00:24:35.781987"], ["updated_at", "2020-10-07 00:24:35.781987"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.4ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:24:35.793330"], ["updated_at", "2020-10-07 00:24:35.793330"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.2ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:24:35.802411"], ["updated_at", "2020-10-07 00:24:35.802411"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$Y6lF5eRE7KX30dW0uOw6PumVG0u2P5NYho/U04OjYTnvmAxA5TJp2"], ["created_at", "2020-10-07 00:24:35.830646"], ["updated_at", "2020-10-07 00:24:35.830646"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$9/wDDBxphNKcpseCDA8oAeWvrCboqUd1eP0OmHU7a0fI5rWPvdDNK"], ["created_at", "2020-10-07 00:24:35.835738"], ["updated_at", "2020-10-07 00:24:35.835738"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:24:35.837145"], ["updated_at", "2020-10-07 00:24:35.837145"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:24:35.838161"], ["updated_at", "2020-10-07 00:24:35.838161"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.0ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-08-23 00:00:00"], ["run_time", 40.0], ["mood", "Relaxed"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:24:35.839049"], ["updated_at", "2020-10-07 00:24:35.839049"], ["title", "Tuesday morning jog"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$vAsvqfdGbitA7XLv/Lr3.Oy2x47Ct.isY7FN6AURaaw.nJ2AfYwbm"], ["created_at", "2020-10-07 00:24:35.844466"], ["updated_at", "2020-10-07 00:24:35.844466"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:24:35.845704"], ["updated_at", "2020-10-07 00:24:35.845704"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Central Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.0ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Central Park"], ["location", "Manhattan"], ["distance", 5.0], ["elevation", 349], ["created_at", "2020-10-07 00:24:35.846656"], ["updated_at", "2020-10-07 00:24:35.846656"], ["description", "loop around central park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" ASC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" DESC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$kMxYLHiEC3WCy/sf2Z7NFeWqm3acpeN3lbLSRETEKiehSMOcF7b32"], ["created_at", "2020-10-07 00:24:35.850337"], ["updated_at", "2020-10-07 00:24:35.850337"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:24:35.851587"], ["updated_at", "2020-10-07 00:24:35.851587"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:24:35.852520"], ["updated_at", "2020-10-07 00:24:35.852520"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$N6vJmYmzBQTtuYcV7BVfRe42rJ3HphzmPqJQ9iyBttE758uhW6pMi"], ["created_at", "2020-10-07 00:26:39.414024"], ["updated_at", "2020-10-07 00:26:39.414024"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:26:39.423975"], ["updated_at", "2020-10-07 00:26:39.423975"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:26:39.431157"], ["updated_at", "2020-10-07 00:26:39.431157"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$FasGiJclj9cwg8aTmiYc4eJSFfQzLuNXW2gimQ3Jc/EhpARPNRima"], ["created_at", "2020-10-07 00:26:39.456673"], ["updated_at", "2020-10-07 00:26:39.456673"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$.JbuIeProz6Oa1Z.3s8z3.0DVo66mnfjSvAqh2Sqq1wiYdGEzwjZa"], ["created_at", "2020-10-07 00:26:39.462181"], ["updated_at", "2020-10-07 00:26:39.462181"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:26:39.463514"], ["updated_at", "2020-10-07 00:26:39.463514"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:26:39.464465"], ["updated_at", "2020-10-07 00:26:39.464465"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.0ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-08-23 00:00:00"], ["run_time", 40.0], ["mood", "Relaxed"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:26:39.465283"], ["updated_at", "2020-10-07 00:26:39.465283"], ["title", "Tuesday morning jog"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$y9kDsmVe8laHDMSYtN4EietqyVyom4m4GoxiE3fyZGKS0oQOwp/1C"], ["created_at", "2020-10-07 00:26:39.470524"], ["updated_at", "2020-10-07 00:26:39.470524"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:26:39.471666"], ["updated_at", "2020-10-07 00:26:39.471666"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Central Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.0ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Central Park"], ["location", "Manhattan"], ["distance", 5.0], ["elevation", 349], ["created_at", "2020-10-07 00:26:39.472595"], ["updated_at", "2020-10-07 00:26:39.472595"], ["description", "loop around central park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" ASC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" DESC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$G4QZpDN1TypeZIhoHe0jbO/2FiL1e3/kof1GwhyAoiCL7lSq5w1/O"], ["created_at", "2020-10-07 00:26:39.476223"], ["updated_at", "2020-10-07 00:26:39.476223"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:26:39.477393"], ["updated_at", "2020-10-07 00:26:39.477393"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:26:39.478326"], ["updated_at", "2020-10-07 00:26:39.478326"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$ogSn1iARV.x0U2lhB2OuL.FR3.AVjkGEj8HCFHXZ752akX/9rxtT."], ["created_at", "2020-10-07 00:26:51.268808"], ["updated_at", "2020-10-07 00:26:51.268808"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:26:51.278994"], ["updated_at", "2020-10-07 00:26:51.278994"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:26:51.285821"], ["updated_at", "2020-10-07 00:26:51.285821"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$2A83.wnE392EJHp0FKmJ..mNqdF.cYKea0PEEc18ApxsBE3SiNRLy"], ["created_at", "2020-10-07 00:26:51.309173"], ["updated_at", "2020-10-07 00:26:51.309173"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:26:51.310420"], ["updated_at", "2020-10-07 00:26:51.310420"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:26:51.311343"], ["updated_at", "2020-10-07 00:26:51.311343"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$vSuAhBROTNGbxvrvT0KCgOAuHf32j4VjrmaOR5Rbodek4ggg4kam2"], ["created_at", "2020-10-07 00:26:51.314217"], ["updated_at", "2020-10-07 00:26:51.314217"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$0B6DAmAgDozDguYFwTY/LuLtUd6g6Y57y2uBXT27B4Age0ClYn8AW"], ["created_at", "2020-10-07 00:26:51.318508"], ["updated_at", "2020-10-07 00:26:51.318508"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:26:51.319734"], ["updated_at", "2020-10-07 00:26:51.319734"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:26:51.320725"], ["updated_at", "2020-10-07 00:26:51.320725"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-08-23 00:00:00"], ["run_time", 40.0], ["mood", "Relaxed"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:26:51.321779"], ["updated_at", "2020-10-07 00:26:51.321779"], ["title", "Tuesday morning jog"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$DIbDBRrB8J.0mrhVRGwRs.3jQw844Z8Mp22DyEVxqq76WT2IvOui2"], ["created_at", "2020-10-07 00:26:51.328625"], ["updated_at", "2020-10-07 00:26:51.328625"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:26:51.331868"], ["updated_at", "2020-10-07 00:26:51.331868"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Central Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Central Park"], ["location", "Manhattan"], ["distance", 5.0], ["elevation", 349], ["created_at", "2020-10-07 00:26:51.333104"], ["updated_at", "2020-10-07 00:26:51.333104"], ["description", "loop around central park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" ASC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" DESC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$cyGQWW1B8UfnpFuF0LG8C.zTEw5hC4gXmkCZhIIsC849H4PeA5ORa"], ["created_at", "2020-10-07 00:26:51.337240"], ["updated_at", "2020-10-07 00:26:51.337240"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:26:51.338670"], ["updated_at", "2020-10-07 00:26:51.338670"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:26:51.339740"], ["updated_at", "2020-10-07 00:26:51.339740"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$Mb6KFKcNXvkrJzwSeKej6exs7dwEQMl5npgkH68phDGhrkLkgW5/."], ["created_at", "2020-10-07 00:27:56.972953"], ["updated_at", "2020-10-07 00:27:56.972953"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:27:56.982222"], ["updated_at", "2020-10-07 00:27:56.982222"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:27:56.989131"], ["updated_at", "2020-10-07 00:27:56.989131"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$Pykgfg4K.3Lrg0Rva/lBTeajfbufdD/ucBe4T5Zfcnr9mwkde1okS"], ["created_at", "2020-10-07 00:27:57.013163"], ["updated_at", "2020-10-07 00:27:57.013163"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:27:57.014443"], ["updated_at", "2020-10-07 00:27:57.014443"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:27:57.015362"], ["updated_at", "2020-10-07 00:27:57.015362"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$u0I7XoOd5MruMBo2XInPguPWMgvpAf3fKPa/JGMrEZXdkp2vtTPAS"], ["created_at", "2020-10-07 00:27:57.018407"], ["updated_at", "2020-10-07 00:27:57.018407"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.2ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:27:57.019974"], ["updated_at", "2020-10-07 00:27:57.019974"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:27:57.021355"], ["updated_at", "2020-10-07 00:27:57.021355"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$8TmAQbSPBBp5n1Q3JzvufebbBICGSCe/vdr0HrSqayn6IsJ4MhLqu"], ["created_at", "2020-10-07 00:27:57.024488"], ["updated_at", "2020-10-07 00:27:57.024488"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$YFD3vS8LI.TRg4n0XN4QXOcGoRovxIDxP4GsMm6vfGl9IV.6XQ7u6"], ["created_at", "2020-10-07 00:27:57.032208"], ["updated_at", "2020-10-07 00:27:57.032208"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:27:57.033731"], ["updated_at", "2020-10-07 00:27:57.033731"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:27:57.034855"], ["updated_at", "2020-10-07 00:27:57.034855"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.0ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-08-23 00:00:00"], ["run_time", 40.0], ["mood", "Relaxed"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:27:57.035771"], ["updated_at", "2020-10-07 00:27:57.035771"], ["title", "Tuesday morning jog"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$ptRg04fS1UN3qdfDMGlYP.VnUWvzmWir9Duj5V4qaQpRDbPK89F/K"], ["created_at", "2020-10-07 00:27:57.042124"], ["updated_at", "2020-10-07 00:27:57.042124"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:27:57.044083"], ["updated_at", "2020-10-07 00:27:57.044083"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Central Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Central Park"], ["location", "Manhattan"], ["distance", 5.0], ["elevation", 349], ["created_at", "2020-10-07 00:27:57.045496"], ["updated_at", "2020-10-07 00:27:57.045496"], ["description", "loop around central park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" ASC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" DESC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$EkFzhQmFuRE0GC/5GEsCMuFqSOkJGjTZ0vFjg3QoIDu55PZUE9s4i"], ["created_at", "2020-10-07 00:27:57.049528"], ["updated_at", "2020-10-07 00:27:57.049528"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:27:57.050774"], ["updated_at", "2020-10-07 00:27:57.050774"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:27:57.051790"], ["updated_at", "2020-10-07 00:27:57.051790"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$KM7YKksWxR1emmII3Fgy8.XqrHinJNTQPbte3G2viPVL8ptvbAyIS"], ["created_at", "2020-10-07 00:28:17.305263"], ["updated_at", "2020-10-07 00:28:17.305263"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$UaJP5.prU7mgmFxctp3ck.RTo6IHucKiPSM6CwScD9BRwIp37PYDC"], ["created_at", "2020-10-07 00:28:17.340349"], ["updated_at", "2020-10-07 00:28:17.340349"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$bwi6W2b5Vu/gvJR.faQvZ.mlocEoMZQxYW7l1uMTJH8QoqwpZmtZq"], ["created_at", "2020-10-07 00:28:17.343099"], ["updated_at", "2020-10-07 00:28:17.343099"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$Cyu5Qs/X2.ARgf56vlLsc.tlfCD46uUvPErUB8E66woVtu8Fvc.5."], ["created_at", "2020-10-07 00:28:17.345648"], ["updated_at", "2020-10-07 00:28:17.345648"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$2rNJdd1cw3wpwCM8hoAvZuQhFVNHkEs/X5qg8dvts3TR4I3yBG6Ru"], ["created_at", "2020-10-07 00:28:17.349996"], ["updated_at", "2020-10-07 00:28:17.349996"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:28:17.356371"], ["updated_at", "2020-10-07 00:28:17.356371"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:28:17.357500"], ["updated_at", "2020-10-07 00:28:17.357500"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.0ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-08-23 00:00:00"], ["run_time", 40.0], ["mood", "Relaxed"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:28:17.358337"], ["updated_at", "2020-10-07 00:28:17.358337"], ["title", "Tuesday morning jog"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$F592xvUGsymA7I/j7JzWAOvAvrJICEuYNwiWoa3JuHuGoNtVDLKEq"], ["created_at", "2020-10-07 00:28:17.364791"], ["updated_at", "2020-10-07 00:28:17.364791"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:28:17.366160"], ["updated_at", "2020-10-07 00:28:17.366160"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Central Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Central Park"], ["location", "Manhattan"], ["distance", 5.0], ["elevation", 349], ["created_at", "2020-10-07 00:28:17.367228"], ["updated_at", "2020-10-07 00:28:17.367228"], ["description", "loop around central park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" ASC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" DESC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$OXDllgkEVXNvdgho/xMZSuv4RL3atGTK1THfISN74Cw63nGWmlHvS"], ["created_at", "2020-10-07 00:28:17.370838"], ["updated_at", "2020-10-07 00:28:17.370838"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:28:17.371994"], ["updated_at", "2020-10-07 00:28:17.371994"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:28:17.372919"], ["updated_at", "2020-10-07 00:28:17.372919"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$gaQybs2gNeRP9Tqe3Xy.GONu9G7xLFPcpD9a2g1hQEryT12RKncFS"], ["created_at", "2020-10-07 00:28:36.617474"], ["updated_at", "2020-10-07 00:28:36.617474"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:28:36.626376"], ["updated_at", "2020-10-07 00:28:36.626376"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:28:36.632998"], ["updated_at", "2020-10-07 00:28:36.632998"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$2yr8w17qildPhwJz2rxRLe17V0usR6BrtnNSABJ/wUI9SEDN53hiu"], ["created_at", "2020-10-07 00:28:36.656715"], ["updated_at", "2020-10-07 00:28:36.656715"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:28:36.658055"], ["updated_at", "2020-10-07 00:28:36.658055"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:28:36.659029"], ["updated_at", "2020-10-07 00:28:36.659029"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$AOBY1qmeTneAajATNtTwseXx/w.uSu7XtWHx1OPZTtOQ1F9b9g95K"], ["created_at", "2020-10-07 00:28:36.662254"], ["updated_at", "2020-10-07 00:28:36.662254"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.2ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:28:36.663968"], ["updated_at", "2020-10-07 00:28:36.663968"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:28:36.665680"], ["updated_at", "2020-10-07 00:28:36.665680"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$goWlAQicEkrD2Q.hM3NVP.sTSvU1QvWXEioqkEAvNTBsA841QOsui"], ["created_at", "2020-10-07 00:28:36.669160"], ["updated_at", "2020-10-07 00:28:36.669160"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$3nrXYX2kGquH2vAfrcZ33emHrAe5hpRbOyWET5ZrbNcj/4/rq5uqy"], ["created_at", "2020-10-07 00:28:36.675916"], ["updated_at", "2020-10-07 00:28:36.675916"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.2ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:28:36.677627"], ["updated_at", "2020-10-07 00:28:36.677627"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:28:36.679329"], ["updated_at", "2020-10-07 00:28:36.679329"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-08-23 00:00:00"], ["run_time", 40.0], ["mood", "Relaxed"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:28:36.680291"], ["updated_at", "2020-10-07 00:28:36.680291"], ["title", "Tuesday morning jog"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRun Load (0.1ms)[0m  [1m[34mSELECT  "runs".* FROM "runs" WHERE "runs"."user_id" = ? ORDER BY "runs"."id" DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$tjb5xNmes9IuUKv.9zzlMu32z1WZv0sL6zMfKsvyRS7DF0Ez8wTXG"], ["created_at", "2020-10-07 00:28:36.685992"], ["updated_at", "2020-10-07 00:28:36.685992"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:28:36.687316"], ["updated_at", "2020-10-07 00:28:36.687316"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Central Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Central Park"], ["location", "Manhattan"], ["distance", 5.0], ["elevation", 349], ["created_at", "2020-10-07 00:28:36.688348"], ["updated_at", "2020-10-07 00:28:36.688348"], ["description", "loop around central park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" ASC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."creator_id" = ? ORDER BY "routes"."id" DESC LIMIT ?[0m  [["creator_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trish@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "trish@gmail.com"], ["first_name", "trish"], ["password_digest", "$2a$04$pupoufabKB2uimPPHlxoPuOFzfoCZVj8YKfiX68JBTAK6BZrQPJcG"], ["created_at", "2020-10-07 00:28:36.692780"], ["updated_at", "2020-10-07 00:28:36.692780"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRoute Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "routes" WHERE "routes"."title" = ? LIMIT ?[0m  [["title", "Prospect Park"], ["LIMIT", 1]]
+  [1m[36mRoute Create (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("title", "location", "distance", "elevation", "created_at", "updated_at", "description", "creator_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Prospect Park"], ["location", "Brooklyn"], ["distance", 3.2], ["elevation", 238], ["created_at", "2020-10-07 00:28:36.694217"], ["updated_at", "2020-10-07 00:28:36.694217"], ["description", "loop around propsect park"], ["creator_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRun Create (0.1ms)[0m  [1m[32mINSERT INTO "runs" ("date", "run_time", "mood", "user_id", "route_id", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2020-09-27 00:00:00"], ["run_time", 28.0], ["mood", "Tired"], ["user_id", 1], ["route_id", 1], ["created_at", "2020-10-07 00:28:36.695530"], ["updated_at", "2020-10-07 00:28:36.695530"], ["title", "Saturday morning run"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRun Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "runs" WHERE "runs"."user_id" = ? AND "runs"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
