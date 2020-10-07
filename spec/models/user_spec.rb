@@ -62,21 +62,21 @@ RSpec.describe User, :type => :model do
   end
 
   it "has many runs" do
-    first_run
-    second_run
+    first_run # create first run tied to user
+    second_run # create second run tied to user
     expect(user.runs.first).to eq(first_run)
     expect(user.runs.last).to eq(second_run)
   end
 
   it "has many routes through runs" do
-    first_route
-    second_route
+    first_route # create first route tied to user
+    second_route # create second route tied to user
     expect(user.routes.first).to eq(first_route)
     expect(user.routes.last).to eq(second_route)
   end
 
   it "has a method 'been_on_run' that returns true when the user the run belongs to the user" do
-    first_run
+    first_run # create first run tied to user
     expect(user.been_on_run(first_run)).to eq(true)
   end
 end
